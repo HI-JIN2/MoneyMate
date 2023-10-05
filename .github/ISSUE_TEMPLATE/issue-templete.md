@@ -1,7 +1,7 @@
 ---
-name: "[feat/fix/docs/etc] issue title"
+name: issue-templete
 about: 이슈를 작성한 뒤 작업해주세요
-title: ''
+title: "[feat/fix/docs/etc] issue title"
 labels: ''
 assignees: ''
 
