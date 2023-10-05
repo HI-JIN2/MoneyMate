@@ -1,4 +1,4 @@
-package com.ssu.moneymate.ui.main;
+package com.ssu.moneymate.ui.main.fixed;
 
 import android.os.Bundle;
 

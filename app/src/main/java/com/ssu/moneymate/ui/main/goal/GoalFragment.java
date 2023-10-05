@@ -1,4 +1,4 @@
-package com.ssu.moneymate.ui.main;
+package com.ssu.moneymate.ui.main.goal;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.ssu.moneymate.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SolutionFragment#newInstance} factory method to
+ * Use the {@link GoalFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SolutionFragment extends Fragment {
+public class GoalFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class SolutionFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SolutionFragment() {
+    public GoalFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class SolutionFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SolutionFragment.
+     * @return A new instance of fragment GoalFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SolutionFragment newInstance(String param1, String param2) {
-        SolutionFragment fragment = new SolutionFragment();
+    public static GoalFragment newInstance(String param1, String param2) {
+        GoalFragment fragment = new GoalFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class SolutionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_solution, container, false);
+        return inflater.inflate(R.layout.fragment_goal, container, false);
     }
 }
