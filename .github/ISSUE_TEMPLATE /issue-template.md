@@ -1,5 +1,5 @@
 ---
-name: Objet issue template
+name: issue template
 about: 이슈를 작성한 뒤 작업해주세요.
 title: "[feat/fix/docs/etc] issue title"
 labels: ''
