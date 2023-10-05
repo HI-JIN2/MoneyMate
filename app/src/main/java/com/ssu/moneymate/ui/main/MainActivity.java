@@ -6,16 +6,19 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.ssu.moneymate.R;
+import com.ssu.moneymate.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        ViewPager vp = findViewById(R.id.viewpager);
+        binding = ActivityMainBinding.inflate(getLayoutInflater()); // 1
+        setContentView(binding.getRoot()); // 2
+
         VPAdapter adapter = new VPAdapter(getSupportFragmentManager());
-        vp.setAdapter(adapter);
+        binding.viewpager.setAdapter(adapter);
     }
 }
