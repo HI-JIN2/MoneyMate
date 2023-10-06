@@ -20,21 +20,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_goal_add"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="31dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="31dp"
         android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/diamond_500"
+        android:padding="12dp"
         android:clickable="true"
-        android:gravity="center"
-        android:paddingVertical="14dp"
-        android:text="추가하기"
+        android:background="@drawable/shape_btn_goal"
+        android:text="+"
         android:textColor="@color/gray_900"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_goal"
