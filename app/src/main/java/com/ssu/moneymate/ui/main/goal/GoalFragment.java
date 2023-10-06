@@ -6,11 +6,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 
-import com.ssu.moneymate.R;
 import com.ssu.moneymate.databinding.FragmentGoalBinding;
 
 public class GoalFragment extends Fragment {
@@ -20,8 +18,7 @@ public class GoalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentGoalBinding.inflate(inflater, container, false);
 
-        ImageView addButton = binding.btnGoalAdd;
-        addButton.setOnClickListener(new View.OnClickListener() {
+        binding.btnGoalAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), GoalActivity.class);

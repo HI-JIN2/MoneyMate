@@ -94,7 +94,7 @@
         android:layout_marginStart="18dp"
         android:background="@null"
         android:gravity="center"
-        android:hint="금액"
+        android:hint="금액을 입력하세요"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/gray_200"
