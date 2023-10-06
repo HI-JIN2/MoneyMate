@@ -11,14 +11,16 @@ import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
 
 import com.ssu.moneymate.R;
+import com.ssu.moneymate.databinding.FragmentGoalBinding;
 
 public class GoalFragment extends Fragment {
+    private FragmentGoalBinding binding;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_goal, container, false);
-        ImageView addButton = view.findViewById(R.id.btn_goal_add);
-        addButton.setClickable(true);
+        binding = FragmentGoalBinding.inflate(inflater, container, false);
 
+        ImageView addButton = binding.btnGoalAdd;
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,6 +30,12 @@ public class GoalFragment extends Fragment {
             }
         });
 
-        return view;
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }
