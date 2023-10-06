@@ -3,6 +3,7 @@ package com.ssu.moneymate.ui.main.goal;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -96,5 +97,11 @@ public class GoalActivity extends AppCompatActivity {
             btnGoalSettingComplete.setTextColor(getResources().getColor(R.color.gray_200)); // 텍스트 색상 초기화
             btnGoalSettingComplete.setBackgroundResource(R.drawable.shape_gray500_fill_20_rect); // 배경색상 초기화
         }
+        btnGoalSettingComplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
