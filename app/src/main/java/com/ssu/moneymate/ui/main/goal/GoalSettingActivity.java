@@ -86,6 +86,16 @@ public class GoalSettingActivity extends AppCompatActivity {
                 && !year1Text.isEmpty() && !month1Text.isEmpty() && !day1Text.isEmpty()
                 && !year2Text.isEmpty() && !month2Text.isEmpty() && !day2Text.isEmpty();
 
+        // 버튼의 속성 변경
         btnGoalSettingComplete.setEnabled(isAllFieldsFilled);
+        if (isAllFieldsFilled) {
+            // 모든 필드가 입력되었을 때
+            btnGoalSettingComplete.setTextColor(getResources().getColor(R.color.white)); // 텍스트 색상 변경
+            btnGoalSettingComplete.setBackgroundResource(R.drawable.shape_diamond500_fill_20_rect); // 배경색상 변경
+        } else {
+            // 필드가 하나라도 빈 경우
+            btnGoalSettingComplete.setTextColor(getResources().getColor(R.color.gray_200)); // 텍스트 색상 초기화
+            btnGoalSettingComplete.setBackgroundResource(R.drawable.shape_gray500_fill_20_rect); // 배경색상 초기화
+        }
     }
 }
