@@ -36,18 +36,6 @@
         tools:text="나는 내년에 있을 유학을 위해\n100만원을 모을 거야" />
 
     <ImageView
-        android:id="@+id/iv_recent_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="-16dp"
-        android:contentDescription="리사이클러뷰"
-        android:padding="12dp"
-        android:src="@drawable/ic_goal_delete"
-        app:layout_constraintEnd_toStartOf="@id/iv_recent_modify"
-        app:layout_constraintTop_toTopOf="@id/iv_goal_background" />
-
-    <ImageView
         android:id="@+id/iv_recent_modify"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,7 +43,7 @@
         android:layout_marginEnd="6dp"
         android:contentDescription="리사이클러뷰"
         android:padding="12dp"
-        android:src="@drawable/ic_goal_modify"
+        android:src="@drawable/ic_goal_delete"
         app:layout_constraintEnd_toEndOf="@id/iv_goal_background"
         app:layout_constraintTop_toTopOf="@id/iv_goal_background" />
 </androidx.constraintlayout.widget.ConstraintLayout>
