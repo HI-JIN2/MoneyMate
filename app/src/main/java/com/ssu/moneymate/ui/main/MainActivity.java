@@ -28,9 +28,26 @@ public class MainActivity extends AppCompatActivity {
         new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                tab.setText("Tab " + (position + 1));
+                // position에 따라 각 탭에 원하는 텍스트를 설정합니다.
+                switch (position) {
+                    case 0:
+                        tab.setText("자산");
+                        break;
+                    case 1:
+                        tab.setText("고정지출");
+                        break;
+                    case 2:
+                        tab.setText("목표설정");
+                        break;
+                    case 3:
+                        tab.setText("솔루션");
+                        break;
+                    // 필요한 만큼 case를 추가하여 각 탭에 원하는 텍스트를 설정합니다.
+                    default:
+                        tab.setText("Tab " + (position + 1));
+                        break;
+                }
             }
         }).attach();
-        //========================================================================
     }
 }
