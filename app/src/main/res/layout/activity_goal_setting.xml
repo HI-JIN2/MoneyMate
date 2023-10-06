@@ -2,6 +2,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_goal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_goal_setting_1"
+        android:id="@+id/tv_goal_setting_semi_title_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="31dp"
@@ -42,10 +43,79 @@
         android:background="@drawable/shape_gray500_fill_20_rect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_goal_setting_1" />
+        app:layout_constraintTop_toBottomOf="@id/tv_goal_setting_semi_title_1" />
 
     <TextView
-        android:id="@+id/tv_goal_setting_2"
+        android:id="@+id/tv_goal_setting_me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="21dp"
+        android:text="나는"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@id/iv_goal_setting_background_1"
+        app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_1" />
+
+    <EditText
+        android:id="@+id/et_goal_setting_target"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="21dp"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="목표를 입력하세요"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray_200"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@id/tv_goal_setting_for"
+        app:layout_constraintStart_toEndOf="@id/tv_goal_setting_me"
+        app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_1" />
+
+    <TextView
+        android:id="@+id/tv_goal_setting_for"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="18dp"
+        android:text="을(를) 위해"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/iv_goal_setting_background_1"
+        app:layout_constraintStart_toEndOf="@id/et_goal_setting_target"
+        app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_1" />
+
+    <EditText
+        android:id="@+id/et_goal_setting_money"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="금액"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray_200"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@id/iv_goal_setting_background_1"
+        app:layout_constraintTop_toBottomOf="@id/tv_goal_setting_me" />
+
+    <TextView
+        android:id="@+id/tv_goal_setting_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="을(를) 모을 거야"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@id/et_goal_setting_money"
+        app:layout_constraintTop_toBottomOf="@id/tv_goal_setting_me" />
+
+
+    <TextView
+        android:id="@+id/tv_goal_setting_semi_title_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="31dp"
@@ -66,10 +136,103 @@
         android:background="@drawable/shape_gray500_fill_20_rect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_goal_setting_2" />
+        app:layout_constraintTop_toBottomOf="@id/tv_goal_setting_semi_title_2" />
+
+    <LinearLayout
+        android:id="@+id/layout_inner_setting1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_goal_setting_background_2"
+        app:layout_constraintEnd_toEndOf="@id/iv_goal_setting_background_2"
+        app:layout_constraintStart_toStartOf="@id/iv_goal_setting_background_2"
+        app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_2"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/et_goal_setting_year1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="2023"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray_200"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@id/layout_inner_setting1"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_2" />
+
+        <TextView
+            android:id="@+id/tv_goal_setting_year1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="년"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/et_goal_setting_year1"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_2" />
+
+        <EditText
+            android:id="@+id/et_goal_setting_month1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="9"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray_200"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/tv_goal_setting_year1"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_2" />
+
+        <TextView
+            android:id="@+id/tv_goal_setting_month1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="월"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/et_goal_setting_month1"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_2" />
+
+        <EditText
+            android:id="@+id/et_goal_setting_day1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="18"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray_200"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/tv_goal_setting_month1"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_2" />
+
+        <TextView
+            android:id="@+id/tv_goal_setting_day1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="월"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/et_goal_setting_day1"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_2" />
+
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_goal_setting_3"
+        android:id="@+id/tv_goal_setting_semi_title_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="31dp"
@@ -90,19 +253,100 @@
         android:background="@drawable/shape_gray500_fill_20_rect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_goal_setting_3" />
+        app:layout_constraintTop_toBottomOf="@id/tv_goal_setting_semi_title_3" />
 
-    <ImageView
-        android:id="@+id/btn_goal_setting_background_3"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="31dp"
-        android:background="@drawable/shape_gray500_fill_20_rect"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_goal_setting_3" />
+    <LinearLayout
+        android:id="@+id/layout_inner_setting2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_goal_setting_background_3"
+        app:layout_constraintEnd_toEndOf="@id/iv_goal_setting_background_3"
+        app:layout_constraintStart_toStartOf="@id/iv_goal_setting_background_3"
+        app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_3"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/et_goal_setting_year2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="2023"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray_200"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@id/layout_inner_setting2"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_3" />
+
+        <TextView
+            android:id="@+id/tv_goal_setting_year2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="년"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/et_goal_setting_year2"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_3" />
+
+        <EditText
+            android:id="@+id/et_goal_setting_month2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="9"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray_200"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/tv_goal_setting_year2"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_3" />
+
+        <TextView
+            android:id="@+id/tv_goal_setting_month2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="월"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/et_goal_setting_month2"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_3" />
+
+        <EditText
+            android:id="@+id/et_goal_setting_day2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="18"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray_200"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/tv_goal_setting_month2"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_3" />
+
+        <TextView
+            android:id="@+id/tv_goal_setting_day2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="월"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/et_goal_setting_day2"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_3" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/btn_goal_setting_complete"
