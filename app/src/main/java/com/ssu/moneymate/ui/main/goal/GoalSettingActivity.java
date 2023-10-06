@@ -3,8 +3,8 @@ package com.ssu.moneymate.ui.main.goal;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,7 +19,7 @@ public class GoalSettingActivity extends AppCompatActivity {
     private EditText etGoalSettingYear2;
     private EditText etGoalSettingMonth2;
     private EditText etGoalSettingDay2;
-    private Button btnGoalSettingComplete;
+    private TextView btnGoalSettingComplete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class GoalSettingActivity extends AppCompatActivity {
         TextWatcher textWatcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // 텍스트 변경 전에 수행할 작업 (여기서는 필요 없음)
+                // 텍스트 변경 전에 수행할 작업
             }
 
             @Override
@@ -52,7 +52,7 @@ public class GoalSettingActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                // 텍스트 변경 후에 수행할 작업 (여기서는 필요 없음)
+                // 텍스트 변경 후에 수행할 작업
             }
         };
 
@@ -81,8 +81,7 @@ public class GoalSettingActivity extends AppCompatActivity {
         String month2Text = etGoalSettingMonth2.getText().toString().trim();
         String day2Text = etGoalSettingDay2.getText().toString().trim();
 
-        // 필요한 조건을 여기에 추가할 수 있습니다.
-        // 예를 들어, 모든 필수 입력 필드가 비어 있지 않을 때 버튼을 활성화할 수 있습니다.
+        // 모든 필수 입력 필드가 비어 있지 않을 때 버튼을 활성화할 수 있습니다.
         boolean isAllFieldsFilled = !targetText.isEmpty() && !moneyText.isEmpty()
                 && !year1Text.isEmpty() && !month1Text.isEmpty() && !day1Text.isEmpty()
                 && !year2Text.isEmpty() && !month2Text.isEmpty() && !day2Text.isEmpty();
