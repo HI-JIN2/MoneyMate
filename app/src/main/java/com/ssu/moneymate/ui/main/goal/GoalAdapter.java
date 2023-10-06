@@ -19,7 +19,6 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // 뷰 홀더와 데이터를 연결하여 아이템을 표시합니다.
     }
 
     @Override

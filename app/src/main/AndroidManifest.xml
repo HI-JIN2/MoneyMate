@@ -22,9 +22,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.main.goal.GoalSettingActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+            android:name=".ui.main.goal.GoalActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

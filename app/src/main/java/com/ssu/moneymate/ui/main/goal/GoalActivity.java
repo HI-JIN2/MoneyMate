@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ssu.moneymate.R;
 
-public class GoalSettingActivity extends AppCompatActivity {
+public class GoalActivity extends AppCompatActivity {
     private EditText etGoalSettingTarget;
     private EditText etGoalSettingMoney;
     private EditText etGoalSettingYear1;
@@ -24,9 +24,9 @@ public class GoalSettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_goal_setting);
+        setContentView(R.layout.activity_goal);
 
-        // EditText 및 Button 요소를 레이아웃과 연결합니다.
+        // EditText 및 Button 요소를 레이아웃과 연결
         etGoalSettingTarget = findViewById(R.id.et_goal_setting_target);
         etGoalSettingMoney = findViewById(R.id.et_goal_setting_money);
         etGoalSettingYear1 = findViewById(R.id.et_goal_setting_year1);
@@ -37,7 +37,7 @@ public class GoalSettingActivity extends AppCompatActivity {
         etGoalSettingDay2 = findViewById(R.id.et_goal_setting_day2);
         btnGoalSettingComplete = findViewById(R.id.btn_goal_setting_complete);
 
-        // EditText의 변경 사항을 감지하는 TextWatcher를 설정합니다.
+        // EditText의 변경 사항을 감지하는 TextWatcher를 설정
         TextWatcher textWatcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -56,7 +56,6 @@ public class GoalSettingActivity extends AppCompatActivity {
             }
         };
 
-        // 모든 EditText에 TextWatcher를 추가합니다.
         etGoalSettingTarget.addTextChangedListener(textWatcher);
         etGoalSettingMoney.addTextChangedListener(textWatcher);
         etGoalSettingYear1.addTextChangedListener(textWatcher);
@@ -71,7 +70,7 @@ public class GoalSettingActivity extends AppCompatActivity {
     }
 
     private void checkEditTextInputs() {
-        // 모든 EditText에 입력이 있는지 확인하고 버튼 상태를 업데이트합니다.
+        // 모든 EditText에 입력이 있는지 확인하고 버튼 상태를 업데이트
         String targetText = etGoalSettingTarget.getText().toString().trim();
         String moneyText = etGoalSettingMoney.getText().toString().trim();
         String year1Text = etGoalSettingYear1.getText().toString().trim();
@@ -81,7 +80,7 @@ public class GoalSettingActivity extends AppCompatActivity {
         String month2Text = etGoalSettingMonth2.getText().toString().trim();
         String day2Text = etGoalSettingDay2.getText().toString().trim();
 
-        // 모든 필수 입력 필드가 비어 있지 않을 때 버튼을 활성화할 수 있습니다.
+        // 모든 필수 입력 필드가 비어 있지 않을 때 버튼을 활성화
         boolean isAllFieldsFilled = !targetText.isEmpty() && !moneyText.isEmpty()
                 && !year1Text.isEmpty() && !month1Text.isEmpty() && !day1Text.isEmpty()
                 && !year2Text.isEmpty() && !month2Text.isEmpty() && !day2Text.isEmpty();

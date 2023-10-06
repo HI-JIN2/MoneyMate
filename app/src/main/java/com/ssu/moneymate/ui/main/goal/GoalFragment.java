@@ -22,7 +22,7 @@ public class GoalFragment extends Fragment {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), GoalSettingActivity.class);
+                Intent intent = new Intent(getActivity(), GoalActivity.class);
                 startActivity(intent);
                 Log.d("GoalFragment", "버튼 클릭 이벤트 실행");
             }
