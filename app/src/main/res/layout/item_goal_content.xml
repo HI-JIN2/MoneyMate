@@ -36,7 +36,7 @@
         tools:text="나는 내년에 있을 유학을 위해\n100만원을 모을 거야" />
 
     <ImageView
-        android:id="@+id/iv_recent_modify"
+        android:id="@+id/iv_goal_delete2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
