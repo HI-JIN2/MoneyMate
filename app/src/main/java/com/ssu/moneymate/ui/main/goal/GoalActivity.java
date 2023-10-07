@@ -3,6 +3,7 @@ package com.ssu.moneymate.ui.main.goal;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -81,6 +82,12 @@ public class GoalActivity extends AppCompatActivity {
         String month2Text = etGoalSettingMonth2.getText().toString().trim();
         String day2Text = etGoalSettingDay2.getText().toString().trim();
 
+        String targetText2 = etGoalSettingTarget.getText().toString();
+        String moneyText2 = etGoalSettingMoney.getText().toString();
+        String year2Text2 = etGoalSettingYear2.getText().toString();
+        String month2Text2 = etGoalSettingMonth2.getText().toString();
+        String day2Text2 = etGoalSettingDay2.getText().toString();
+
         // 모든 필수 입력 필드가 비어 있지 않을 때 버튼을 활성화
         boolean isAllFieldsFilled = !targetText.isEmpty() && !moneyText.isEmpty()
                 && !year1Text.isEmpty() && !month1Text.isEmpty() && !day1Text.isEmpty()
@@ -100,6 +107,12 @@ public class GoalActivity extends AppCompatActivity {
         btnGoalSettingComplete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String combinedText = "나는" + year2Text2 + "년" + month2Text2 + "월" + day2Text2 + "일까지" + targetText2 + "을(를) 위해" + moneyText2 + "을(를) 모을 거야";
+
+                GoalFragment fragment = (GoalFragment) getSupportFragmentManager().findFragmentById(R.id.layout_goal);
+                if (fragment != null) {
+                    fragment.onGoalSettingComplete(combinedText);
+                }
                 finish();
             }
         });

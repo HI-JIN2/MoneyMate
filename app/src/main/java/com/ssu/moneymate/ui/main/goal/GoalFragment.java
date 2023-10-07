@@ -11,11 +11,11 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.ssu.moneymate.R;
 import com.ssu.moneymate.databinding.FragmentGoalBinding;
 
 public class GoalFragment extends Fragment {
     private FragmentGoalBinding binding;
+    private static final int GOAL_ACTIVITY_REQUEST_CODE = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,21 +47,22 @@ public class GoalFragment extends Fragment {
                 }
             }
         });
+        return binding.getRoot();
+    }
 
-        String textTitle = "서버에서 가져온 텍스트"; // 서버에서 가져온 텍스트
-        boolean showViews = true; // 서버에서 가져온 데이터로 뷰를 표시할지 여부
-        binding.tvGoalSettingContent.setText(textTitle);
+    public void onGoalSettingComplete(String combinedText) {
+        Log.d("1", "please");
 
-        if (showViews) {
-            binding.ivGoalBackground.setVisibility(View.VISIBLE);
-            binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
-            binding.ivGoalDelete.setVisibility(View.VISIBLE);
-        } else {
+        if (combinedText == null || combinedText.isEmpty()) {
             binding.ivGoalBackground.setVisibility(View.GONE);
             binding.tvGoalSettingContent.setVisibility(View.GONE);
             binding.ivGoalDelete.setVisibility(View.GONE);
+        } else {
+            binding.tvGoalSettingContent.setText(combinedText);
+            binding.ivGoalBackground.setVisibility(View.VISIBLE);
+            binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
+            binding.ivGoalDelete.setVisibility(View.VISIBLE);
         }
-        return binding.getRoot();
     }
 
     @Override
