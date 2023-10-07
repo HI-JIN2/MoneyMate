@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.ssu.moneymate.R;
 import com.ssu.moneymate.databinding.FragmentGoalBinding;
 
 public class GoalFragment extends Fragment {
@@ -47,6 +48,19 @@ public class GoalFragment extends Fragment {
             }
         });
 
+        String textTitle = "서버에서 가져온 텍스트"; // 서버에서 가져온 텍스트
+        boolean showViews = true; // 서버에서 가져온 데이터로 뷰를 표시할지 여부
+        binding.tvGoalSettingContent.setText(textTitle);
+
+        if (showViews) {
+            binding.ivGoalBackground.setVisibility(View.VISIBLE);
+            binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
+            binding.ivGoalDelete.setVisibility(View.VISIBLE);
+        } else {
+            binding.ivGoalBackground.setVisibility(View.GONE);
+            binding.tvGoalSettingContent.setVisibility(View.GONE);
+            binding.ivGoalDelete.setVisibility(View.GONE);
+        }
         return binding.getRoot();
     }
 
