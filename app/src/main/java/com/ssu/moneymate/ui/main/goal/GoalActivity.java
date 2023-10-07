@@ -110,7 +110,9 @@ public class GoalActivity extends AppCompatActivity {
                 String combinedText = "나는" + year2Text2 + "년" + month2Text2 + "월" + day2Text2 + "일까지" + targetText2 + "을(를) 위해" + moneyText2 + "을(를) 모을 거야";
 
                 GoalFragment fragment = (GoalFragment) getSupportFragmentManager().findFragmentById(R.id.layout_goal);
+                fragment.onGoalSettingComplete(combinedText);
                 if (fragment != null) {
+                    Log.d("1", "hello");
                     fragment.onGoalSettingComplete(combinedText);
                 }
                 finish();

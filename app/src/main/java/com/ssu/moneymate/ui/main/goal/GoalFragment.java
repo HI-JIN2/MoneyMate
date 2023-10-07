@@ -15,7 +15,6 @@ import com.ssu.moneymate.databinding.FragmentGoalBinding;
 
 public class GoalFragment extends Fragment {
     private FragmentGoalBinding binding;
-    private static final int GOAL_ACTIVITY_REQUEST_CODE = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
