@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 
@@ -24,6 +25,20 @@ public class GoalFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), GoalActivity.class);
                 startActivity(intent);
                 Log.d("GoalFragment", "버튼 클릭 이벤트 실행");
+            }
+        });
+
+        // 삭제 버튼을 클릭했을 때
+        binding.ivGoalDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // ImageView와 그 부모 뷰를 가져옴
+                ImageView imageViewToDelete = binding.ivGoalBackground;
+                ViewGroup parentView = (ViewGroup) imageViewToDelete.getParent();
+
+                if (parentView != null) {
+                    parentView.removeView(imageViewToDelete);
+                }
             }
         });
 
