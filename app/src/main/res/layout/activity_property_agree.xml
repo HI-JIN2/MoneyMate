@@ -71,9 +71,7 @@
             android:id="@+id/mypage_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
+            android:orientation="vertical">
 
 
             <LinearLayout
@@ -81,25 +79,24 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="@drawable/rectangle_background"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp">
+                android:weightSum="10">
 
                 <CheckBox
                     android:id="@+id/check1"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:button="@null"
-                    android:background="@drawable/ic_non_check" />
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:button="@drawable/background_checkbox" />
 
                 <TextView
                     android:id="@+id/text_kbbank"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:text="개인신용정보 수집.이용 동의"
                     android:textColor="@color/black"
+                    android:gravity="center_vertical"
                     android:textSize="15dp"
-                    android:layout_weight="7">
+                    android:layout_weight="8.5">
                 </TextView>
 
 
@@ -111,26 +108,24 @@
                 android:orientation="horizontal"
                 android:background="@drawable/rectangle_background"
                 android:weightSum="10"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
                 android:layout_marginTop="20dp">
 
                 <CheckBox
                     android:id="@+id/check2"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:button="@null"
-                    android:background="@drawable/ic_non_check" />
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:button="@drawable/background_checkbox" />
 
                 <TextView
                     android:id="@+id/text_nhbank"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:text="상품 카테고리 전송.수집.이용 동의"
                     android:textColor="@color/black"
+                    android:gravity="center_vertical"
                     android:textSize="15dp"
-                    android:layout_weight="7">
+                    android:layout_weight="8.5">
                 </TextView>
             </LinearLayout>
 

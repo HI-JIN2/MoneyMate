@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".ui.main.property.StockFragment">
 
     <LinearLayout
@@ -70,8 +70,7 @@
                 android:id="@+id/check1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:button="@null"
-                android:background="@drawable/ic_non_check"
+                android:button="@drawable/background_checkbox"
                 android:layout_weight="2"/>
         </LinearLayout>
 
