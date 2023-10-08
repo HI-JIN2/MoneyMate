@@ -103,7 +103,7 @@ public class GoalActivity extends AppCompatActivity {
             String month2Text2 = String.valueOf(etGoalSettingMonth2.getText());
             String day2Text2 = String.valueOf(etGoalSettingDay2.getText());
 
-            combinedText = "나는 " + year2Text2 + "년 " + month2Text2 + "월 " + day2Text2 + "일까지 " + targetText2 + "을(를) 위해\n" + moneyText2 + "을(를) 모을 거야";
+            combinedText = "나는 " + year2Text2 + "년 " + month2Text2 + "월 " + day2Text2 + "일까지\n" + targetText2 + "을(를) 위해\n" + moneyText2 + "을(를) 모을 거야";
 
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = sharedPreferences.edit();
