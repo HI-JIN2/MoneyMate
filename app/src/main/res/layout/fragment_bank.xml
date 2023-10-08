@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.property.BankFragment">
+
+    <LinearLayout
+        android:id="@+id/text_bank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mypage_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="10dp"
+            android:paddingBottom="10dp"
+            android:text="한 곳에서 계좌 잔액을 확인할 수 있어요"
+            android:textColor="@color/black"
+            android:textSize="15dp">
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/mypage_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:background="@drawable/rectangle_background">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:weightSum="10">
+
+                <ImageButton
+                    android:id="@+id/btn_nh_bank"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:foregroundGravity="bottom"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_kb_bank"
+                    android:scaleType="fitCenter"
+                    tools:ignore="MissingConstraints"
+                    android:layout_weight="1.5">
+                </ImageButton>
+
+                <TextView
+                    android:id="@+id/text_kbbank"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="KB 국민은행"
+                    android:paddingStart="10dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_weight="7">
+                </TextView>
+
+                <CheckBox
+                    android:id="@+id/check1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:button="@drawable/background_checkbox"
+                    android:layout_weight="1.5"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:weightSum="10">
+
+                <ImageButton
+                    android:id="@+id/btn_review_close"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:foregroundGravity="bottom"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_nh_bank"
+                    android:scaleType="fitCenter"
+                    tools:ignore="MissingConstraints"
+                    android:layout_weight="1.5">
+                </ImageButton>
+
+                <TextView
+                    android:id="@+id/text_nhbank"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:paddingStart="10dp"
+                    android:gravity="center_vertical"
+                    android:text="NH 농협은행"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_weight="7">
+                </TextView>
+
+                <CheckBox
+                    android:id="@+id/check2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:button="@drawable/background_checkbox"
+                    android:layout_weight="1.5"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:weightSum="10">
+
+                <ImageButton
+                    android:id="@+id/btn_nh_finance"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:foregroundGravity="bottom"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_nh_finance"
+                    android:scaleType="fitCenter"
+                    tools:ignore="MissingConstraints"
+                    android:layout_weight="1.5">
+                </ImageButton>
+
+                <TextView
+                    android:id="@+id/text_nhfinance"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:paddingStart="10dp"
+                    android:gravity="center_vertical"
+                    android:text="NH 농협상호금융"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_weight="7">
+                </TextView>
+
+                <CheckBox
+                    android:id="@+id/check3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:button="@drawable/background_checkbox"
+                    android:layout_weight="1.5"/>
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:weightSum="10">
+
+                <ImageButton
+                    android:id="@+id/img_kakao"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:foregroundGravity="bottom"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_kakao_bank"
+                    android:scaleType="fitCenter"
+                    tools:ignore="MissingConstraints"
+                    android:layout_weight="2">
+                </ImageButton>
+
+                <TextView
+                    android:id="@+id/text_kakaobank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingStart="10dp"
+                    android:text="카카오뱅크"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_weight="6">
+                </TextView>
+
+                <CheckBox
+                    android:id="@+id/check3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:button="@null"
+                    android:background="@drawable/ic_non_check"
+                    android:layout_weight="2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:weightSum="10">
+
+                <ImageButton
+                    android:id="@+id/img_woori"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:foregroundGravity="bottom"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_woori_bank"
+                    android:scaleType="fitCenter"
+                    tools:ignore="MissingConstraints"
+                    android:layout_weight="2">
+                </ImageButton>
+
+                <TextView
+                    android:id="@+id/text_woori_bank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingStart="10dp"
+                    android:text="우리은행"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_weight="6">
+                </TextView>
+
+                <CheckBox
+                    android:id="@+id/check4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:button="@null"
+                    android:background="@drawable/ic_non_check"
+                    android:layout_weight="2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:weightSum="10">
+
+                <ImageButton
+                    android:id="@+id/img_hana"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:foregroundGravity="bottom"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_hana_bank"
+                    android:scaleType="fitCenter"
+                    tools:ignore="MissingConstraints"
+                    android:layout_weight="2">
+                </ImageButton>
+
+                <TextView
+                    android:id="@+id/text_hana_bank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingStart="10dp"
+                    android:text="KEB 하나은행"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_weight="6">
+                </TextView>
+
+                <CheckBox
+                    android:id="@+id/check5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:button="@null"
+                    android:background="@drawable/ic_non_check"
+                    android:layout_weight="2"/>
+            </LinearLayout>-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_connect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/shape_btn"
+                android:text="자산 연결하기" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
