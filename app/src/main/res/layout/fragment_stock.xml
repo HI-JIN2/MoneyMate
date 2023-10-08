@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:paddingStart="10dp"
         android:paddingBottom="10dp"
-        android:text="한 곳에서 증권 연결을 확인할 수 있어요"
+        android:text="한 곳에서 보험 연결을 확인할 수 있어요"
         android:textColor="@color/black"
         android:textSize="15dp">
     </TextView>
@@ -41,28 +41,29 @@
             android:weightSum="10">
 
             <ImageButton
-                android:id="@+id/btn_nh_bank"
+                android:id="@+id/btn_lifeplanet"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
-                android:layout_gravity="left"
+                android:layout_gravity="center_vertical"
                 android:foregroundGravity="bottom"
                 android:background="@color/white"
-                android:src="@drawable/ic_kb_bank"
+                android:src="@drawable/ic_lifeplanet"
                 android:scaleType="fitCenter"
                 tools:ignore="MissingConstraints"
-                android:layout_weight="1.5">
+                android:layout_weight="2">
             </ImageButton>
 
             <TextView
-                android:id="@+id/text_kbbank"
+                android:id="@+id/text_liefplanet"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingStart="10dp"
-                android:text="KB 국민은행"
+                android:text="교보 라이프플래닛"
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                android:layout_weight="7">
+                android:gravity="center_vertical"
+                android:layout_weight="6">
             </TextView>
 
             <CheckBox
@@ -71,47 +72,7 @@
                 android:layout_height="match_parent"
                 android:button="@null"
                 android:background="@drawable/ic_non_check"
-                android:layout_weight="1.5"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="10">
-
-            <ImageButton
-                android:id="@+id/btn_review_close"
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:layout_gravity="left"
-                android:foregroundGravity="bottom"
-                android:background="@color/white"
-                android:src="@drawable/ic_nh_bank"
-                android:scaleType="fitCenter"
-                tools:ignore="MissingConstraints"
-                android:layout_weight="1.5">
-            </ImageButton>
-
-            <TextView
-                android:id="@+id/text_nhbank"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:paddingStart="10dp"
-                android:text="NH 농협은행"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                android:layout_weight="7">
-            </TextView>
-
-            <CheckBox
-                android:id="@+id/check2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:button="@null"
-                android:background="@drawable/ic_non_check"
-                android:layout_weight="1.5"/>
+                android:layout_weight="2"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -127,7 +88,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/shape_btn"
-                android:text="증권 연결하기" />
+                android:text="보험 연결하기" />
         </LinearLayout>
     </LinearLayout>
 

@@ -33,7 +33,7 @@ public class ConnectPropertyActivity extends AppCompatActivity {
                         tab.setText("은행");
                         break;
                     case 1:
-                        tab.setText("증권");
+                        tab.setText("보험");
                         break;
                     // 필요한 만큼 case를 추가하여 각 탭에 원하는 텍스트를 설정합니다.
                     default:
