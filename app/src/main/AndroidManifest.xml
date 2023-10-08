@@ -13,13 +13,13 @@
         android:theme="@style/Theme.MoneyMate"
         tools:targetApi="31">
         <activity
-            android:name=".ui.main.fixed.MyPropertyActivity"
+            android:name=".ui.main.property.MyPropertyActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.fixed.PropertyAgreeActivity"
+            android:name=".ui.main.property.PropertyAgreeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.fixed.ConnectPropertyActivity"
+            android:name=".ui.main.property.ConnectPropertyActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.ssu.moneymate.ui.main.fixed;
+package com.ssu.moneymate.ui.main.property;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.ssu.moneymate.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BankFragment#newInstance} factory method to
+ * Use the {@link StockFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BankFragment extends Fragment {
+public class StockFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class BankFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BankFragment() {
+    public StockFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class BankFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment BankFragment.
+     * @return A new instance of fragment StockFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BankFragment newInstance(String param1, String param2) {
-        BankFragment fragment = new BankFragment();
+    public static StockFragment newInstance(String param1, String param2) {
+        StockFragment fragment = new StockFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class BankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bank, container, false);
+        return inflater.inflate(R.layout.fragment_stock, container, false);
     }
 }

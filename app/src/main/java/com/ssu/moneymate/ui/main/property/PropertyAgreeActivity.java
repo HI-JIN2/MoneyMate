@@ -1,4 +1,4 @@
-package com.ssu.moneymate.ui.main.fixed;
+package com.ssu.moneymate.ui.main.property;
 
 import androidx.appcompat.app.AppCompatActivity;
 

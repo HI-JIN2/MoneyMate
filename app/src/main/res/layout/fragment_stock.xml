@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".ui.main.fixed.StockFragment">
+    tools:context=".ui.main.property.StockFragment">
 
     <LinearLayout
         android:id="@+id/text_bank"

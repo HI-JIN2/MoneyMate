@@ -1,11 +1,10 @@
-package com.ssu.moneymate.ui.main.fixed;
+package com.ssu.moneymate.ui.main.property;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
-import android.util.Property;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;

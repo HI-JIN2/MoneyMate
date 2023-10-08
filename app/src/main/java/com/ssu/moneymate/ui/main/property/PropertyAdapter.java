@@ -1,14 +1,10 @@
-package com.ssu.moneymate.ui.main.fixed;
+package com.ssu.moneymate.ui.main.property;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-
-import com.ssu.moneymate.ui.main.goal.GoalFragment;
-import com.ssu.moneymate.ui.main.property.PropertyFragment;
-import com.ssu.moneymate.ui.main.solution.SolutionFragment;
 
 public class PropertyAdapter extends FragmentStateAdapter {
 
