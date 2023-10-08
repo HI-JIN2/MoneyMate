@@ -184,7 +184,7 @@
                 </ImageButton>
 
                 <TextView
-                    android:id="@+id/text_nh_finance"
+                    android:id="@+id/nh_finance"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:paddingStart="10dp"
