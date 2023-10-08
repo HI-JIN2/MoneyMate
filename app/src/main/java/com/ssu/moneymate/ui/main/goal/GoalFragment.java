@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,29 +21,13 @@ public class GoalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentGoalBinding.inflate(inflater, container, false);
 
-        // SharedPreferences에서 데이터를 가져옴
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        String combinedText = sharedPreferences.getString("combinedText", "");
         binding.btnGoalAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), GoalActivity.class);
                 startActivity(intent);
-                Log.d("GoalFragment", "버튼 클릭 이벤트 실행");
             }
         });
-
-        if (!combinedText.isEmpty()) {
-            Log.d("1", "please");
-            binding.tvGoalSettingContent.setText(combinedText);
-            binding.ivGoalBackground.setVisibility(View.VISIBLE);
-            binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
-            binding.ivGoalDelete.setVisibility(View.VISIBLE);
-        } else {
-            binding.ivGoalBackground.setVisibility(View.GONE);
-            binding.tvGoalSettingContent.setVisibility(View.GONE);
-            binding.ivGoalDelete.setVisibility(View.GONE);
-        }
 
         // 삭제 버튼을 클릭했을 때
         binding.ivGoalDelete.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +53,25 @@ public class GoalFragment extends Fragment {
             }
         });
         return binding.getRoot();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // 화면이 다시 활성화될 때 SharedPreferences에서 데이터를 가져와서 화면에 설정
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String combinedText = sharedPreferences.getString("combinedText", "");
+
+        if (!combinedText.isEmpty()) {
+            binding.tvGoalSettingContent.setText(combinedText);
+            binding.ivGoalBackground.setVisibility(View.VISIBLE);
+            binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
+            binding.ivGoalDelete.setVisibility(View.VISIBLE);
+        } else {
+            binding.ivGoalBackground.setVisibility(View.GONE);
+            binding.tvGoalSettingContent.setVisibility(View.GONE);
+            binding.ivGoalDelete.setVisibility(View.GONE);
+        }
     }
 
     @Override

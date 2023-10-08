@@ -97,18 +97,6 @@ public class GoalActivity extends AppCompatActivity {
         btnGoalSettingComplete.setEnabled(isAllFieldsFilled);
 
         if (isAllFieldsFilled) {
-            String targetText2 = String.valueOf(etGoalSettingTarget.getText());
-            String moneyText2 = String.valueOf(etGoalSettingMoney.getText());
-            String year2Text2 = String.valueOf(etGoalSettingYear2.getText());
-            String month2Text2 = String.valueOf(etGoalSettingMonth2.getText());
-            String day2Text2 = String.valueOf(etGoalSettingDay2.getText());
-
-            combinedText = "나는 " + year2Text2 + "년 " + month2Text2 + "월 " + day2Text2 + "일까지\n" + targetText2 + "을(를) 위해\n" + moneyText2 + "을(를) 모을 거야";
-
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("combinedText", combinedText);
-            editor.apply();
             btnGoalSettingComplete.setTextColor(getResources().getColor(R.color.white)); // 텍스트 색상 변경
             btnGoalSettingComplete.setBackgroundResource(R.drawable.shape_diamond500_fill_20_rect); // 배경색상 변경
         } else {
@@ -119,10 +107,19 @@ public class GoalActivity extends AppCompatActivity {
         btnGoalSettingComplete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                GoalFragment fragment = (GoalFragment) getSupportFragmentManager().findFragmentById(R.id.layout_goal);
-//                if (fragment != null) {
-//                    fragment.onGoalSettingComplete(combinedText);
-//                }
+                String targetText2 = String.valueOf(etGoalSettingTarget.getText());
+                String moneyText2 = String.valueOf(etGoalSettingMoney.getText());
+                String year2Text2 = String.valueOf(etGoalSettingYear2.getText());
+                String month2Text2 = String.valueOf(etGoalSettingMonth2.getText());
+                String day2Text2 = String.valueOf(etGoalSettingDay2.getText());
+
+                combinedText = "나는 " + year2Text2 + "년 " + month2Text2 + "월 " + day2Text2 + "일까지\n" + targetText2 + "을(를) 위해\n" + moneyText2 + "을(를) 모을 거야";
+
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(GoalActivity.this);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("combinedText", combinedText);
+                editor.apply();
+                editor.commit();
                 finish();
             }
         });
