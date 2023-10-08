@@ -101,7 +101,7 @@ public class GoalActivity extends AppCompatActivity {
             btnGoalSettingComplete.setBackgroundResource(R.drawable.shape_diamond500_fill_20_rect); // 배경색상 변경
         } else {
             // 필드가 하나라도 빈 경우
-            btnGoalSettingComplete.setTextColor(getResources().getColor(R.color.gray_200)); // 텍스트 색상 초기화
+            btnGoalSettingComplete.setTextColor(getResources().getColor(R.color.Gray_50)); // 텍스트 색상 초기화
             btnGoalSettingComplete.setBackgroundResource(R.drawable.shape_gray500_fill_20_rect); // 배경색상 초기화
         }
         btnGoalSettingComplete.setOnClickListener(new View.OnClickListener() {
