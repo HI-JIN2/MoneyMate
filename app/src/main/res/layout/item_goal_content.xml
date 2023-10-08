@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_rv_goal"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:background="?android:colorBackground"
+    android:paddingHorizontal="31dp">
+
+    <ImageView
+        android:id="@+id/iv_goal_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_gray500_fill_20_rect"
+        android:contentDescription="리사이클러뷰"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_goal_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginBottom="20dp"
+        android:text="@{data.title}"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_goal_background"
+        app:layout_constraintStart_toStartOf="@id/iv_goal_background"
+        app:layout_constraintTop_toTopOf="@id/iv_goal_background"
+        tools:text="나는 내년에 있을 유학을 위해\n100만원을 모을 거야" />
+
+    <ImageView
+        android:id="@+id/iv_goal_delete2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:contentDescription="리사이클러뷰"
+        android:padding="12dp"
+        android:src="@drawable/ic_goal_delete"
+        app:layout_constraintEnd_toEndOf="@id/iv_goal_background"
+        app:layout_constraintTop_toTopOf="@id/iv_goal_background" />
+</androidx.constraintlayout.widget.ConstraintLayout>
