@@ -65,10 +65,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:layout_marginEnd="6dp"
+        android:layout_marginEnd="-16dp"
         android:contentDescription="리사이클러뷰"
         android:padding="12dp"
         android:src="@drawable/ic_goal_delete"
+        app:layout_constraintEnd_toStartOf="@id/iv_goal_modify"
+        app:layout_constraintTop_toTopOf="@id/iv_goal_background" />
+
+    <ImageView
+        android:id="@+id/iv_goal_modify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:contentDescription="리사이클러뷰"
+        android:padding="12dp"
+        android:src="@drawable/ic_goal_modify"
         app:layout_constraintEnd_toEndOf="@id/iv_goal_background"
         app:layout_constraintTop_toTopOf="@id/iv_goal_background" />
 

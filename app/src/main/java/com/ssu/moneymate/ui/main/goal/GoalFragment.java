@@ -29,6 +29,15 @@ public class GoalFragment extends Fragment {
             }
         });
 
+        binding.ivGoalModify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), GoalActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         // 삭제 버튼을 클릭했을 때
         binding.ivGoalDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +45,7 @@ public class GoalFragment extends Fragment {
                 ImageView imageViewToDelete = binding.ivGoalBackground;
                 TextView textViewToDelete = binding.tvGoalSettingContent;
                 ImageView deleteImageViewToDelete = binding.ivGoalDelete;
+                ImageView modifyImageViewToDelete = binding.ivGoalModify;
 
                 ViewGroup parentView = (ViewGroup) imageViewToDelete.getParent();
 
@@ -43,6 +53,7 @@ public class GoalFragment extends Fragment {
                     parentView.removeView(imageViewToDelete);
                     parentView.removeView(textViewToDelete);
                     parentView.removeView(deleteImageViewToDelete);
+                    parentView.removeView(modifyImageViewToDelete);
                 }
 
                 // SharedPreferences에서 데이터를 가져와서 비우고 저장
@@ -67,10 +78,12 @@ public class GoalFragment extends Fragment {
             binding.ivGoalBackground.setVisibility(View.VISIBLE);
             binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
             binding.ivGoalDelete.setVisibility(View.VISIBLE);
+            binding.ivGoalModify.setVisibility(View.VISIBLE);
         } else {
             binding.ivGoalBackground.setVisibility(View.GONE);
             binding.tvGoalSettingContent.setVisibility(View.GONE);
             binding.ivGoalDelete.setVisibility(View.GONE);
+            binding.ivGoalModify.setVisibility(View.GONE);
         }
     }
 
