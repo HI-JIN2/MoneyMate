@@ -2,11 +2,11 @@
     <!-- Base application theme. -->
     <style name="Theme.MoneyMate" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/Diamond</item>
-        <item name="colorPrimaryVariant">@color/Green_50_A200</item>
+        <item name="colorPrimary">@color/Green_50_A200</item>
+        <item name="colorPrimaryVariant">@color/Green_50</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/Diamond</item>
+        <item name="colorSecondary">@color/Green_50_A200</item>
         <item name="colorSecondaryVariant">@color/Green_50_500</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
