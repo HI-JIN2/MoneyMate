@@ -1,7 +1,9 @@
 package com.ssu.moneymate.ui.main.goal;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +21,9 @@ public class GoalFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentGoalBinding.inflate(inflater, container, false);
-
+        // SharedPreferences에서 데이터를 가져옴
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String combinedText = sharedPreferences.getString("combinedText", "");
         binding.btnGoalAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,6 +32,19 @@ public class GoalFragment extends Fragment {
                 Log.d("GoalFragment", "버튼 클릭 이벤트 실행");
             }
         });
+
+        if (!combinedText.isEmpty()) {
+            Log.d("1", "please");
+            binding.tvGoalSettingContent.setText(combinedText);
+            binding.ivGoalBackground.setVisibility(View.VISIBLE);
+            binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
+            binding.ivGoalDelete.setVisibility(View.VISIBLE);
+        } else {
+            binding.tvGoalSettingContent.setText(combinedText);
+            binding.ivGoalBackground.setVisibility(View.GONE);
+            binding.tvGoalSettingContent.setVisibility(View.GONE);
+            binding.ivGoalDelete.setVisibility(View.GONE);
+        }
 
         // 삭제 버튼을 클릭했을 때
         binding.ivGoalDelete.setOnClickListener(new View.OnClickListener() {
@@ -49,20 +66,22 @@ public class GoalFragment extends Fragment {
         return binding.getRoot();
     }
 
-    public void onGoalSettingComplete(String combinedText) {
-        Log.d("1", "please");
-
-        if (combinedText == null || combinedText.isEmpty()) {
-            binding.ivGoalBackground.setVisibility(View.GONE);
-            binding.tvGoalSettingContent.setVisibility(View.GONE);
-            binding.ivGoalDelete.setVisibility(View.GONE);
-        } else {
-            binding.tvGoalSettingContent.setText(combinedText);
-            binding.ivGoalBackground.setVisibility(View.VISIBLE);
-            binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
-            binding.ivGoalDelete.setVisibility(View.VISIBLE);
-        }
-    }
+//    public void onGoalSettingComplete(String combinedText) {
+//        Log.d("1", "please");
+//
+//        if (!combinedText.isEmpty()) {
+//            // 데이터가 저장되어 있다면 UI에 표시
+//            binding.tvGoalSettingContent.setText(combinedText);
+//            binding.ivGoalBackground.setVisibility(View.VISIBLE);
+//            binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
+//            binding.ivGoalDelete.setVisibility(View.VISIBLE);
+//        } else {
+//            binding.tvGoalSettingContent.setText(combinedText);
+//            binding.ivGoalBackground.setVisibility(View.VISIBLE);
+//            binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
+//            binding.ivGoalDelete.setVisibility(View.VISIBLE);
+//        }
+//    }
 
     @Override
     public void onDestroyView() {

@@ -1,6 +1,8 @@
 package com.ssu.moneymate.ui.main.goal;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -22,6 +24,8 @@ public class GoalActivity extends AppCompatActivity {
     private EditText etGoalSettingDay2;
     private TextView btnGoalSettingComplete;
 
+    private String combinedText = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,9 @@ public class GoalActivity extends AppCompatActivity {
         etGoalSettingMonth2 = findViewById(R.id.et_goal_setting_month2);
         etGoalSettingDay2 = findViewById(R.id.et_goal_setting_day2);
         btnGoalSettingComplete = findViewById(R.id.btn_goal_setting_complete);
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        combinedText = sharedPreferences.getString("", "");
 
         // EditText의 변경 사항을 감지하는 TextWatcher를 설정
         TextWatcher textWatcher = new TextWatcher() {
@@ -81,12 +88,6 @@ public class GoalActivity extends AppCompatActivity {
         String month2Text = etGoalSettingMonth2.getText().toString().trim();
         String day2Text = etGoalSettingDay2.getText().toString().trim();
 
-        String targetText2 = String.valueOf(etGoalSettingTarget.getText());
-        String moneyText2 = String.valueOf(etGoalSettingMoney.getText());
-        String year2Text2 = String.valueOf(etGoalSettingYear2.getText());
-        String month2Text2 = String.valueOf(etGoalSettingMonth2.getText());
-        String day2Text2 = String.valueOf(etGoalSettingDay2.getText());
-
         // 모든 필수 입력 필드가 비어 있지 않을 때 버튼을 활성화
         boolean isAllFieldsFilled = !targetText.isEmpty() && !moneyText.isEmpty()
                 && !year1Text.isEmpty() && !month1Text.isEmpty() && !day1Text.isEmpty()
@@ -94,8 +95,20 @@ public class GoalActivity extends AppCompatActivity {
 
         // 버튼의 속성 변경
         btnGoalSettingComplete.setEnabled(isAllFieldsFilled);
+
         if (isAllFieldsFilled) {
-            // 모든 필드가 입력되었을 때
+            String targetText2 = String.valueOf(etGoalSettingTarget.getText());
+            String moneyText2 = String.valueOf(etGoalSettingMoney.getText());
+            String year2Text2 = String.valueOf(etGoalSettingYear2.getText());
+            String month2Text2 = String.valueOf(etGoalSettingMonth2.getText());
+            String day2Text2 = String.valueOf(etGoalSettingDay2.getText());
+
+            combinedText = "나는" + year2Text2 + "년" + month2Text2 + "월" + day2Text2 + "일까지" + targetText2 + "을(를) 위해\n" + moneyText2 + "을(를) 모을 거야";
+
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("combinedText", combinedText);
+            editor.apply();
             btnGoalSettingComplete.setTextColor(getResources().getColor(R.color.white)); // 텍스트 색상 변경
             btnGoalSettingComplete.setBackgroundResource(R.drawable.shape_diamond500_fill_20_rect); // 배경색상 변경
         } else {
@@ -106,12 +119,10 @@ public class GoalActivity extends AppCompatActivity {
         btnGoalSettingComplete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String combinedText = "나는" + year2Text2 + "년" + month2Text2 + "월" + day2Text2 + "일까지" + targetText2 + "을(를) 위해\n" + moneyText2 + "을(를) 모을 거야";
-
-                GoalFragment fragment = (GoalFragment) getSupportFragmentManager().findFragmentById(R.id.layout_goal2);
-                if (fragment != null) {
-                    fragment.onGoalSettingComplete(combinedText);
-                }
+//                GoalFragment fragment = (GoalFragment) getSupportFragmentManager().findFragmentById(R.id.layout_goal);
+//                if (fragment != null) {
+//                    fragment.onGoalSettingComplete(combinedText);
+//                }
                 finish();
             }
         });

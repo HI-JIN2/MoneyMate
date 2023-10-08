@@ -72,15 +72,6 @@
         app:layout_constraintEnd_toEndOf="@id/iv_goal_background"
         app:layout_constraintTop_toTopOf="@id/iv_goal_background" />
 
-    <FrameLayout
-        android:id="@+id/layout_goal2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <!--    <androidx.recyclerview.widget.RecyclerView-->
     <!--        android:id="@+id/rv_goal"-->
     <!--        android:layout_width="0dp"-->
