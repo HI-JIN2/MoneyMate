@@ -1,5 +1,6 @@
 package com.ssu.moneymate.ui.main.property;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,26 +13,13 @@ import android.widget.CheckBox;
 
 import com.ssu.moneymate.R;
 import com.ssu.moneymate.databinding.FragmentBankBinding;
+import com.ssu.moneymate.ui.main.goal.GoalActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BankFragment extends Fragment {
         private FragmentBankBinding binding;
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            if (getArguments() != null) {
-            }
-        }
-
-        /*@Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            // Inflate the layout for this fragment
-            //return inflater.inflate(R.layout.fragment_bank, container, false);
-        }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,8 +49,12 @@ public class BankFragment extends Fragment {
                 for (String checkBoxInfo : selectedCheckBoxes) {
                     Log.d("CheckBoxInfo", checkBoxInfo);
                 }
+
+                Intent intent = new Intent(getActivity(), PropertyAgreeActivity.class);
+                startActivity(intent);
             }
         });
+
         return binding.getRoot();
     }
 }
