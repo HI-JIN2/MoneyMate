@@ -21,6 +21,11 @@ public class GoalFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentGoalBinding.inflate(inflater, container, false);
+
+        binding.ivGoalBackground.setVisibility(View.GONE);
+        binding.tvGoalSettingContent.setVisibility(View.GONE);
+        binding.ivGoalDelete.setVisibility(View.GONE);
+
         // SharedPreferences에서 데이터를 가져옴
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String combinedText = sharedPreferences.getString("combinedText", "");
@@ -39,11 +44,6 @@ public class GoalFragment extends Fragment {
             binding.ivGoalBackground.setVisibility(View.VISIBLE);
             binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
             binding.ivGoalDelete.setVisibility(View.VISIBLE);
-        } else {
-            binding.tvGoalSettingContent.setText(combinedText);
-            binding.ivGoalBackground.setVisibility(View.GONE);
-            binding.tvGoalSettingContent.setVisibility(View.GONE);
-            binding.ivGoalDelete.setVisibility(View.GONE);
         }
 
         // 삭제 버튼을 클릭했을 때
@@ -53,6 +53,12 @@ public class GoalFragment extends Fragment {
                 ImageView imageViewToDelete = binding.ivGoalBackground;
                 TextView textViewToDelete = binding.tvGoalSettingContent;
                 ImageView deleteImageViewToDelete = binding.ivGoalDelete;
+
+                // SharedPreferences에서 데이터를 가져와서 비우고 저장
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.remove("combinedText"); // combinedText 제거
+                editor.apply();
 
                 ViewGroup parentView = (ViewGroup) imageViewToDelete.getParent();
 
