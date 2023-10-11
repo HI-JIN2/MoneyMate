@@ -30,7 +30,7 @@
         android:textStyle="bold"
         android:paddingTop="0dp"
         android:textColor="@color/black"
-        android:background="null"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/titleView" />
 
@@ -44,7 +44,7 @@
         android:textStyle="bold"
         android:textSize="22dp"
         android:paddingTop="0dp"
-        android:background="null"
+        android:background="@color/white"
         android:textColor="@color/black"
         android:padding="3dp"
         app:layout_constraintStart_toStartOf="parent"
