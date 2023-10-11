@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.property.StockFragment">
+
+    <LinearLayout
+        android:id="@+id/text_bank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mypage_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="10dp"
+        android:paddingBottom="10dp"
+        android:text="한 곳에서 보험 연결을 확인할 수 있어요"
+        android:textColor="@color/black"
+        android:textSize="15dp">
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/mypage_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:background="@drawable/rectangle_background">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:weightSum="10">
+
+            <ImageButton
+                android:id="@+id/btn_lifeplanet"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:foregroundGravity="bottom"
+                android:background="@color/white"
+                android:src="@drawable/ic_lifeplanet"
+                android:scaleType="fitCenter"
+                tools:ignore="MissingConstraints"
+                android:layout_weight="2">
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/text_liefplanet"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:text="교보 라이프플래닛"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:layout_weight="6">
+            </TextView>
+
+            <CheckBox
+                android:id="@+id/check1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:button="@drawable/background_checkbox"
+                android:layout_weight="2"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_connect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/shape_btn"
+                android:text="보험 연결하기" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

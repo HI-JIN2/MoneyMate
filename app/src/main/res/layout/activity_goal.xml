@@ -68,7 +68,7 @@
         android:hint="목표를 입력하세요"
         android:inputType="text"
         android:textColor="@color/black"
-        android:textColorHint="@color/gray_200"
+        android:textColorHint="@color/Gray_50_600"
         android:textSize="16dp"
         app:layout_constraintEnd_toStartOf="@id/tv_goal_setting_for"
         app:layout_constraintStart_toEndOf="@id/tv_goal_setting_me"
@@ -97,7 +97,7 @@
         android:hint="금액을 입력하세요"
         android:inputType="text"
         android:textColor="@color/black"
-        android:textColorHint="@color/gray_200"
+        android:textColorHint="@color/Gray_50_600"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="@id/iv_goal_setting_background_1"
         app:layout_constraintTop_toBottomOf="@id/tv_goal_setting_me" />
@@ -162,7 +162,7 @@
             android:hint="year"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textColorHint="@color/gray_200"
+            android:textColorHint="@color/Gray_50_600"
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="@id/layout_inner_setting1"
             app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_2" />
@@ -188,7 +188,7 @@
             android:hint="month"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textColorHint="@color/gray_200"
+            android:textColorHint="@color/Gray_50_600"
             android:textSize="16dp"
             app:layout_constraintStart_toEndOf="@id/tv_goal_setting_year1"
             app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_2" />
@@ -214,7 +214,7 @@
             android:hint="day"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textColorHint="@color/gray_200"
+            android:textColorHint="@color/Gray_50_600"
             android:textSize="16dp"
             app:layout_constraintStart_toEndOf="@id/tv_goal_setting_month1"
             app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_2" />
@@ -279,7 +279,7 @@
             android:hint="year"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textColorHint="@color/gray_200"
+            android:textColorHint="@color/Gray_50_600"
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="@id/layout_inner_setting2"
             app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_3" />
@@ -305,7 +305,7 @@
             android:hint="month"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textColorHint="@color/gray_200"
+            android:textColorHint="@color/Gray_50_600"
             android:textSize="16dp"
             app:layout_constraintStart_toEndOf="@id/tv_goal_setting_year2"
             app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_3" />
@@ -331,7 +331,7 @@
             android:hint="day"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textColorHint="@color/gray_200"
+            android:textColorHint="@color/Gray_50_600"
             android:textSize="16dp"
             app:layout_constraintStart_toEndOf="@id/tv_goal_setting_month2"
             app:layout_constraintTop_toTopOf="@id/iv_goal_setting_background_3" />
@@ -360,7 +360,7 @@
         android:gravity="center"
         android:paddingVertical="14dp"
         android:text="등록 완료"
-        android:textColor="@color/gray_200"
+        android:textColor="@color/Gray_50_600"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
