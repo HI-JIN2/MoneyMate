@@ -79,11 +79,13 @@ public class GoalFragment extends Fragment {
             binding.tvGoalSettingContent.setVisibility(View.VISIBLE);
             binding.ivGoalDelete.setVisibility(View.VISIBLE);
             binding.ivGoalModify.setVisibility(View.VISIBLE);
+            binding.btnGoalAdd.setEnabled(false);
         } else {
             binding.ivGoalBackground.setVisibility(View.GONE);
             binding.tvGoalSettingContent.setVisibility(View.GONE);
             binding.ivGoalDelete.setVisibility(View.GONE);
             binding.ivGoalModify.setVisibility(View.GONE);
+            binding.btnGoalAdd.setEnabled(true);
         }
     }
 
