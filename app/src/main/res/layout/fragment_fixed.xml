@@ -30,7 +30,6 @@
         android:textStyle="bold"
         android:paddingTop="0dp"
         android:textColor="@color/black"
-        android:background="null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/titleView" />
 
@@ -44,7 +43,6 @@
         android:textStyle="bold"
         android:textSize="22dp"
         android:paddingTop="0dp"
-        android:background="null"
         android:textColor="@color/black"
         android:padding="3dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +82,7 @@
         app:tint="@android:color/white"
         app:borderWidth="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="TODO" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
