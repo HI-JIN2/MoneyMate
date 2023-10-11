@@ -53,9 +53,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="18dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="63dp"
         android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@id/iv_goal_background"
         app:layout_constraintTop_toTopOf="@id/iv_goal_background"
         tools:text="나는 내년에 있을 유학을 위해\n200만원을 모을 거야" />
