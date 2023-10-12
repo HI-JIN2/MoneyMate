@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.ssu.moneymate.databinding.FragmentFixedBinding;
 
@@ -20,24 +21,19 @@ public class FixedFragment extends Fragment {
     FixedAdapter adapter;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        items.add(new FixedData("적금", 200000));
-        items.add(new FixedData("저축", 200000));
-        items.add(new FixedData("교통", 230000));
-        items.add(new FixedData("적금", 200000));
-        items.add(new FixedData("저축", 400000));
-        items.add(new FixedData("적금", 260000));
-
-        adapter = new FixedAdapter(context, items);
-
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         fixBinding = FragmentFixedBinding.inflate(inflater, container, false);
+
+        items.add(new FixedData("적금", 200));
+        items.add(new FixedData("저축", 200));
+        items.add(new FixedData("교통", 230));
+        items.add(new FixedData("적금", 200));
+        items.add(new FixedData("저축", 400));
+        items.add(new FixedData("적금", 260));
+
+        adapter = new FixedAdapter(context, items);
+        fixBinding.fixedList.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         // Inflate the layout for this fragment
         return fixBinding.getRoot();
