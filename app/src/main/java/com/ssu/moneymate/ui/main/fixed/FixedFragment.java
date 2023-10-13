@@ -25,12 +25,14 @@ public class FixedFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentFixedBinding.inflate(inflater, container, false);
 
-        items.add(new FixedData("적금", 200));
-        items.add(new FixedData("저축", 200));
-        items.add(new FixedData("교통", 230));
-        items.add(new FixedData("적금", 200));
-        items.add(new FixedData("저축", 400));
-        items.add(new FixedData("적금", 260));
+        items.add(new FixedData("적금", 200000));
+        items.add(new FixedData("저축", 200000));
+        items.add(new FixedData("교통", 230000));
+        items.add(new FixedData("적금", 200000));
+        items.add(new FixedData("저축", 400000));
+        items.add(new FixedData("적금", 260000));
+        items.add(new FixedData("저축", 400000));
+        items.add(new FixedData("저축", 400000));
 
         fixedAdapter = new FixedAdapter(context, items);
         binding.rvFixedList.setAdapter(fixedAdapter);

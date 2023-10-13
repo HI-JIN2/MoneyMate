@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_rv_fix"
     android:layout_width="match_parent"
-    android:layout_height="85dp"
+    android:layout_height="95dp"
     android:background="?android:colorBackground"
     android:paddingHorizontal="31dp">
 
@@ -14,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
+        android:layout_marginTop="10dp"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,13 +36,11 @@
         android:id="@+id/tv_every_month"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginBottom="20dp"
         android:textColor="@color/black"
         android:textSize="12dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@id/iv_goal_background"
-        app:layout_constraintStart_toStartOf="@id/iv_goal_background"
+        app:layout_constraintEnd_toStartOf="@id/tv_price"
         app:layout_constraintTop_toTopOf="@id/iv_goal_background"
         tools:text="매 월" />
 
@@ -49,14 +48,10 @@
         android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginBottom="20dp"
-        android:text="@{data.title}"
         android:textSize="20dp"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@id/iv_goal_background"
-        app:layout_constraintStart_toEndOf="@id/tv_every_month"
+        app:layout_constraintEnd_toStartOf="@id/tv_won"
         app:layout_constraintTop_toTopOf="@id/iv_goal_background"
         tools:text="200,000" />
 
@@ -64,14 +59,12 @@
         android:id="@+id/tv_won"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:layout_marginBottom="20dp"
-        android:text="@{data.title}"
         android:textColor="@color/black"
         android:textSize="20dp"
+        android:layout_marginEnd="18dp"
         app:layout_constraintBottom_toBottomOf="@id/iv_goal_background"
-        app:layout_constraintStart_toEndOf="@id/tv_price"
         app:layout_constraintTop_toTopOf="@id/iv_goal_background"
+        app:layout_constraintEnd_toEndOf="@id/iv_goal_background"
         tools:text="원" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

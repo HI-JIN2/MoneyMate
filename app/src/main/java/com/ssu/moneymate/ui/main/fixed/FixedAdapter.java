@@ -59,6 +59,8 @@ public class FixedAdapter extends RecyclerView.Adapter<FixedAdapter.ViewHolder> 
 
         void bindItem(FixedData item){
             //뷰 바인딩으로 이미 자식뷰들의 참조값들이 모두 연결되어 있음.
+            itemBinding.tvEveryMonth.setText("매 월");
+            itemBinding.tvWon.setText("원");
             itemBinding.tvCategory.setText(item.category);
             itemBinding.tvPrice.setText(String.valueOf(item.money));
         }
