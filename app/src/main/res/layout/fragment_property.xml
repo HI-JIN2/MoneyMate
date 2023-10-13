@@ -48,20 +48,39 @@
             </ImageButton>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/text_main_property"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingStart="10dp"
-            android:paddingBottom="10dp"
-            android:text="40,000,000원"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="25dp">
-        </TextView>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+            <TextView
+                android:id="@+id/text_main_property"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingBottom="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:layout_weight="1">
+            </TextView>
+            <TextView
+                android:id="@+id/text_main_won"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:paddingBottom="10dp"
+                android:text="원"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:layout_weight="9">
+            </TextView>
+        </LinearLayout>
 
 
         <LinearLayout
+            android:id="@+id/layout_kbbank"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -97,6 +116,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_nhbank"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -130,7 +150,7 @@
             </TextView>
         </LinearLayout>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -162,7 +182,7 @@
                 android:textStyle="bold"
                 android:layout_weight="8.5">
             </TextView>
-        </LinearLayout>
+        </LinearLayout>-->
 
     </LinearLayout>
 

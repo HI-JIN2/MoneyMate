@@ -66,6 +66,7 @@
 
 
             <LinearLayout
+                android:id="@+id/layout_myproperty_kb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -84,7 +85,7 @@
                     android:src="@drawable/ic_kb_bank"
                     android:scaleType="fitCenter"
                     tools:ignore="MissingConstraints"
-                    android:layout_weight="1.5">
+                    android:layout_weight="1">
                 </ImageButton>
 
                 <TextView
@@ -93,27 +94,40 @@
                     android:layout_height="match_parent"
                     android:paddingStart="10dp"
                     android:text="KB 국민은행"
+                    android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"
-                    android:layout_weight="4.5">
+                    android:layout_weight="4">
                 </TextView>
 
                 <TextView
-                    android:id="@+id/check1"
+                    android:id="@+id/text_KBbalance"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="4,000,000원"
+                    android:text="0"
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"
-                    android:gravity="end"
-                    android:layout_weight="4"/>
+                    android:gravity="end|center_vertical"
+                    android:layout_weight="4.5"/>
+
+                <TextView
+                    android:id="@+id/text_KBwon"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="원"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:gravity="end|center_vertical"
+                    android:layout_weight="0.5"/>
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layout_property_nh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -133,7 +147,7 @@
                     android:src="@drawable/ic_nh_bank"
                     android:scaleType="fitCenter"
                     tools:ignore="MissingConstraints"
-                    android:layout_weight="1.5">
+                    android:layout_weight="1">
                 </ImageButton>
 
                 <TextView
@@ -142,25 +156,36 @@
                     android:layout_height="match_parent"
                     android:paddingStart="10dp"
                     android:text="NH 농협은행"
+                    android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"
-                    android:layout_weight="4.5">
+                    android:layout_weight="4">
                 </TextView>
 
                 <TextView
-                    android:id="@+id/check2"
+                    android:id="@+id/text_NHbalance"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="4,000,000원"
+                    android:text="0"
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"
-                    android:gravity="end"
-                    android:layout_weight="4"/>
+                    android:gravity="end|center_vertical"
+                    android:layout_weight="4.5"/>
+                <TextView
+                    android:id="@+id/text_won"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="원"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:gravity="end|center_vertical"
+                    android:layout_weight="0.5"/>
             </LinearLayout>
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -205,7 +230,7 @@
                     android:textStyle="bold"
                     android:gravity="end"
                     android:layout_weight="4"/>
-            </LinearLayout>
+            </LinearLayout>-->
 
         </LinearLayout>
 

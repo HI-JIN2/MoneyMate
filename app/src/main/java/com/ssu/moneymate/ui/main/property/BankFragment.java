@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,14 +21,17 @@ import java.util.List;
 
 public class BankFragment extends Fragment {
         private FragmentBankBinding binding;
-
+    private boolean kbChecked = false;
+    private boolean nhChecked = false;
+    private PropertyViewModel viewModel;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentBankBinding.inflate(inflater, container, false);
 
         CheckBox kb_check = binding.check1;
         CheckBox nh_check = binding.check2;
-        CheckBox nh_finance_check = binding.check3;
+
+        viewModel = new ViewModelProvider(this).get(PropertyViewModel.class);
 
         binding.btnConnect.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,13 +41,17 @@ public class BankFragment extends Fragment {
 
                 if (kb_check.isChecked()) {
                     selectedCheckBoxes.add("KB 체크");
+                    kbChecked = true;
+                    viewModel.setKbChecked(true);
                 }
                 if (nh_check.isChecked()) {
                     selectedCheckBoxes.add("NH 체크");
+                    nhChecked = true;
+                    viewModel.setNhChecked(true);
                 }
-                if (nh_finance_check.isChecked()) {
+                /*if (nh_finance_check.isChecked()) {
                     selectedCheckBoxes.add("NH 금융 체크");
-                }
+                }*/
 
                 // 선택된 CheckBox 정보를 다른 곳으로 넘깁니다.
                 for (String checkBoxInfo : selectedCheckBoxes) {
@@ -51,6 +59,8 @@ public class BankFragment extends Fragment {
                 }
 
                 Intent intent = new Intent(getActivity(), PropertyAgreeActivity.class);
+                intent.putExtra("kbChecked", kbChecked);
+                intent.putExtra("nhChecked", nhChecked);
                 startActivity(intent);
             }
         });
