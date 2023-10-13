@@ -10,7 +10,7 @@
     android:paddingHorizontal="31dp">
 
     <TextView
-        android:id="@+id/fix_category"
+        android:id="@+id/tv_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -29,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fix_category" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_category" />
 
     <TextView
         android:id="@+id/tv_every_month"
@@ -46,7 +46,7 @@
         tools:text="매 월" />
 
     <TextView
-        android:id="@+id/tv_fix_content"
+        android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -70,7 +70,7 @@
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@id/iv_goal_background"
-        app:layout_constraintStart_toEndOf="@id/tv_fix_content"
+        app:layout_constraintStart_toEndOf="@id/tv_price"
         app:layout_constraintTop_toTopOf="@id/iv_goal_background"
         tools:text="원" />
 

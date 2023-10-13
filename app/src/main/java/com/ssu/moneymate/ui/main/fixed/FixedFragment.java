@@ -15,15 +15,15 @@ import java.util.ArrayList;
 
 public class FixedFragment extends Fragment {
     Context context;
-    FragmentFixedBinding fixBinding;
+    FragmentFixedBinding binding;
 
     ArrayList<FixedData> items = new ArrayList<>(); //리사이클러 뷰가 보여줄 대량의 데이터를 가지고 있는 리시트객체
-    FixedAdapter adapter;
+    FixedAdapter fixedAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        fixBinding = FragmentFixedBinding.inflate(inflater, container, false);
+        binding = FragmentFixedBinding.inflate(inflater, container, false);
 
         items.add(new FixedData("적금", 200));
         items.add(new FixedData("저축", 200));
@@ -32,10 +32,11 @@ public class FixedFragment extends Fragment {
         items.add(new FixedData("저축", 400));
         items.add(new FixedData("적금", 260));
 
-        adapter = new FixedAdapter(context, items);
-        fixBinding.fixedList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        fixedAdapter = new FixedAdapter(context, items);
+        binding.rvFixedList.setAdapter(fixedAdapter);
+        binding.rvFixedList.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         // Inflate the layout for this fragment
-        return fixBinding.getRoot();
+        return binding.getRoot();
     }
 }
