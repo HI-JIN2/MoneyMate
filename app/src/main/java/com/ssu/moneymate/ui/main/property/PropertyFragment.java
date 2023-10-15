@@ -20,6 +20,7 @@ import com.ssu.moneymate.R;
 import com.ssu.moneymate.databinding.FragmentBankBinding;
 import com.ssu.moneymate.databinding.FragmentPropertyBinding;
 import com.ssu.moneymate.ui.main.MainActivity;
+import com.ssu.moneymate.ui.main.fixed.FixedData;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -29,6 +30,9 @@ import java.util.Locale;
 public class PropertyFragment extends Fragment {
     private FragmentPropertyBinding binding;
     private PropertyViewModel viewModel;
+
+    List<PropertyData> items = new ArrayList<>();
+    PropertyDatabase database;
 
     /*// ViewModel에서 체크박스 상태 가져오기
     LiveData<Boolean> kbCheckedLiveData;
@@ -45,6 +49,8 @@ public class PropertyFragment extends Fragment {
         binding.layoutNhbank.setVisibility(View.GONE);*/
 
         viewModel = new ViewModelProvider(requireActivity()).get(PropertyViewModel.class);
+        database = PropertyDatabase.getInstance(getContext());
+        items = database.propertyDataDao().getAll();
 
         binding.btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +90,6 @@ public class PropertyFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
         /*//옵저버 정의 - 데이터가 변하는 이벤트 발생시 처리할 핸들러(람다)
         Observer<Boolean> kbObserver = kbCheckedValue -> binding.layoutKbbank.setVisibility(View.VISIBLE);
 

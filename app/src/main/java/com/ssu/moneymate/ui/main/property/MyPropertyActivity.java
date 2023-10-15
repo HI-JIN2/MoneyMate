@@ -32,11 +32,14 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 import com.google.gson.annotations.SerializedName;
+import com.ssu.moneymate.ui.main.fixed.FixedData;
 
 public class MyPropertyActivity extends AppCompatActivity {
 
     private ActivityMyPropertyBinding binding;
     private PropertyViewModel viewModel;
+
+    PropertyDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,7 @@ public class MyPropertyActivity extends AppCompatActivity {
         boolean nhChecked = intent.getBooleanExtra("nhChecked", false);
 
         viewModel = new ViewModelProvider(this).get(PropertyViewModel.class);
+        database = PropertyDatabase.getInstance(this);
 
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,6 +125,16 @@ public class MyPropertyActivity extends AppCompatActivity {
                                 viewModel.setBalance(balance);
                                 viewModel.setNhBalance(nhbalance);
 
+                                // 데이터를 Room 데이터베이스에 삽입
+                                PropertyData propertyData = new PropertyData();
+                                propertyData.setBalance(balance);
+
+                                PropertyData nhPropertyData = new PropertyData();
+                                nhPropertyData.setBalance(nhbalance);
+
+                                database.propertyDataDao().insert(propertyData);
+                                database.propertyDataDao().insert(nhPropertyData);
+
                                 // 이제 'balance' 변수에 잔액 값이 저장되어 있습니다.
                                 // NumberFormat 사용
                                 NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US); // 미국 로케일을 사용하여 쉼표(,)로 구분
@@ -148,5 +162,10 @@ public class MyPropertyActivity extends AppCompatActivity {
         if (!nhChecked)
             binding.layoutPropertyNh.setVisibility(View.GONE);
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

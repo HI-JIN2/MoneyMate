@@ -109,4 +109,9 @@ public class MyStockActivity extends AppCompatActivity {
             }
         }).start(); // 백그라운드 스레드 실행
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

@@ -63,4 +63,9 @@ public class PropertyAgreeActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }
