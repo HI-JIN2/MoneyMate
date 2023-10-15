@@ -42,12 +42,10 @@ public class BankFragment extends Fragment {
                 if (kb_check.isChecked()) {
                     selectedCheckBoxes.add("KB 체크");
                     kbChecked = true;
-                    viewModel.setKbChecked(true);
                 }
                 if (nh_check.isChecked()) {
                     selectedCheckBoxes.add("NH 체크");
                     nhChecked = true;
-                    viewModel.setNhChecked(true);
                 }
                 /*if (nh_finance_check.isChecked()) {
                     selectedCheckBoxes.add("NH 금융 체크");

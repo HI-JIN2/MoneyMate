@@ -52,25 +52,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:paddingTop="10dp"
             android:weightSum="10">
             <TextView
                 android:id="@+id/text_main_property"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingStart="10dp"
                 android:paddingBottom="10dp"
-                android:text="0"
+                android:text=""
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:textSize="25dp"
-                android:layout_weight="1">
+                android:textSize="25dp">
             </TextView>
             <TextView
                 android:id="@+id/text_main_won"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:paddingBottom="10dp"
-                android:text="원"
+                android:text="확인하러 가기!"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="25dp"
@@ -79,76 +79,7 @@
         </LinearLayout>
 
 
-        <LinearLayout
-            android:id="@+id/layout_kbbank"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="20dp"
-            android:paddingBottom="10dp"
-            android:weightSum="10">
-
-            <ImageButton
-                android:id="@+id/btn_nh_bank"
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:layout_gravity="left"
-                android:foregroundGravity="bottom"
-                android:background="@color/white"
-                android:src="@drawable/ic_kb_bank"
-                android:scaleType="fitCenter"
-                tools:ignore="MissingConstraints"
-                android:layout_weight="1.5">
-            </ImageButton>
-
-            <TextView
-                android:id="@+id/text_kbbank"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:text="KB 국민은행"
-                android:paddingStart="10dp"
-                android:gravity="center_vertical"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                android:layout_weight="8.5">
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layout_nhbank"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="10dp"
-            android:weightSum="10">
-
-            <ImageButton
-                android:id="@+id/btn_review_close"
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:layout_gravity="left"
-                android:foregroundGravity="bottom"
-                android:background="@color/white"
-                android:src="@drawable/ic_nh_bank"
-                android:scaleType="fitCenter"
-                tools:ignore="MissingConstraints"
-                android:layout_weight="1.5">
-            </ImageButton>
-
-            <TextView
-                android:id="@+id/text_nhbank"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:paddingStart="10dp"
-                android:gravity="center_vertical"
-                android:text="NH 농협은행"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                android:layout_weight="8.5">
-            </TextView>
-        </LinearLayout>
+        ¿
 
         <!--<LinearLayout
             android:layout_width="match_parent"

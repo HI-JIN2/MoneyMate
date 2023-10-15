@@ -7,10 +7,20 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 public class PropertyViewModel extends ViewModel {
-    private MutableLiveData<Boolean> kbChecked = new MutableLiveData<>();
-    private MutableLiveData<Boolean> nhChecked = new MutableLiveData<>();
+    private final MutableLiveData<Boolean> kbChecked = new MutableLiveData<>();
+    private final MutableLiveData<Boolean> nhChecked = new MutableLiveData<>();
+
+    public void setKbChecked(boolean checked) {
+        kbChecked.setValue(checked);
+        Log.d("kbset", String.valueOf(kbChecked.getValue()));
+    }
+
+    public void setNhChecked(boolean checked) {
+        nhChecked.setValue(checked);
+    }
 
     public LiveData<Boolean> isKbChecked() {
+        Log.d("kbsetget", String.valueOf(kbChecked.getValue()));
         return kbChecked;
     }
 
@@ -18,13 +28,6 @@ public class PropertyViewModel extends ViewModel {
         return nhChecked;
     }
 
-    public void setKbChecked(boolean checked) {
-        kbChecked.setValue(checked);
-    }
-
-    public void setNhChecked(boolean checked) {
-        nhChecked.setValue(checked);
-    }
 
     private MutableLiveData<Integer> balance = new MutableLiveData<>();
     private MutableLiveData<Integer> nhBalance = new MutableLiveData<>();

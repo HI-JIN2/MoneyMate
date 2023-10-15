@@ -56,6 +56,10 @@ public class MyPropertyActivity extends AppCompatActivity {
                 Intent intent = new Intent(MyPropertyActivity.this, MainActivity.class);
                 intent.putExtra("kbChecked", kbChecked);
                 intent.putExtra("nhChecked", nhChecked);
+
+                viewModel.setKbChecked(kbChecked);
+                viewModel.setNhChecked(nhChecked);
+
                 startActivity(intent);
             }
         });
