@@ -324,7 +324,7 @@
         android:layout_marginStart="18dp"
         android:textSize="20dp"
         android:hint="ex) 200000"
-        android:inputType="text"
+        android:inputType="number"
         android:textColor="@color/black"
         android:singleLine="true"
         app:layout_constraintTop_toTopOf="@id/iv_fix_setting_background_1"

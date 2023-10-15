@@ -31,6 +31,13 @@ public class FixedFragment extends Fragment {
         database = RoomDB.getInstance(context);
 //        database.fixedDao().deleteAll();
         items = database.fixedDao().getAll();
+        long  total = 0;
+        for (int i = 0; i < items.size(); i++) {
+
+            total += Integer.parseInt(items.get(i).money);
+        }
+
+        binding.totalMoneyText.setText(String.valueOf(total));
 
         binding.btnFixAdd.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -55,6 +62,12 @@ public class FixedFragment extends Fragment {
         // 화면이 다시 보일 때 RecyclerView를 업데이트
         items.clear();
         items.addAll(database.fixedDao().getAll());
+        long  total = 0;
+        for (int i = 0; i < items.size(); i++) {
+            total += Integer.parseInt(items.get(i).money);
+        }
+        binding.totalMoneyText.setText(String.valueOf(total));
         fixedAdapter.notifyDataSetChanged();
     }
+
 }
