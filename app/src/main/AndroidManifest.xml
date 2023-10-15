@@ -25,6 +25,9 @@
         </activity>
 
         <activity
+            android:name=".ui.main.property.MyStockActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.main.property.MyPropertyActivity"
             android:exported="false" />
         <activity
