@@ -34,6 +34,10 @@ public class PropertyAgreeActivity extends AppCompatActivity {
         CheckBox check1 = binding.check1;
         CheckBox check2 = binding.check2;
 
+        Intent intent = getIntent();
+        boolean kbChecked = intent.getBooleanExtra("kbChecked", false);
+        boolean nhChecked = intent.getBooleanExtra("nhChecked", false);
+
         binding.btnConnect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,8 +57,15 @@ public class PropertyAgreeActivity extends AppCompatActivity {
                 }
 
                 Intent intent = new Intent(PropertyAgreeActivity.this, MyPropertyActivity.class);
+                intent.putExtra("kbChecked", kbChecked);
+                intent.putExtra("nhChecked", nhChecked);
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

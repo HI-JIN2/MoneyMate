@@ -42,7 +42,7 @@ public class StockFragment extends Fragment {
                     Log.d("CheckBoxInfo", checkBoxInfo);
                 }
 
-                Intent intent = new Intent(getActivity(), PropertyAgreeActivity.class);
+                Intent intent = new Intent(getActivity(), MyStockActivity.class);
                 startActivity(intent);
             }
         });

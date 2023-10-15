@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    tools:context=".ui.main.property.MyPropertyActivity">
+    android:padding = "20dp"
+    tools:context=".ui.main.property.MyStockActivity">
+
 
     <LinearLayout
         android:id="@+id/layout_back"
@@ -40,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingStart="10dp"
-            android:text="나의 계좌"
+            android:text="나의 보험"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold">
@@ -79,49 +80,27 @@
                     android:id="@+id/btn_nh_bank"
                     android:layout_width="0dp"
                     android:layout_height="30dp"
-                    android:layout_gravity="left"
+                    android:layout_gravity="center_vertical"
                     android:foregroundGravity="bottom"
                     android:background="@color/white"
-                    android:src="@drawable/ic_kb_bank"
+                    android:src="@drawable/ic_lifeplanet"
                     android:scaleType="fitCenter"
                     tools:ignore="MissingConstraints"
                     android:layout_weight="1">
                 </ImageButton>
 
                 <TextView
-                    android:id="@+id/text_kbbank"
+                    android:id="@+id/text_stock1"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="50dp"
                     android:paddingStart="10dp"
-                    android:text="KB 국민은행"
+                    android:text="보험 연동중..."
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"
-                    android:layout_weight="4">
+                    android:layout_weight="9">
                 </TextView>
-
-                <TextView
-                    android:id="@+id/text_KBbalance"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:text="0"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:gravity="end|center_vertical"
-                    android:layout_weight="4.5"/>
-
-                <TextView
-                    android:id="@+id/text_KBwon"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:text="원"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:gravity="end|center_vertical"
-                    android:layout_weight="0.5"/>
 
 
             </LinearLayout>
@@ -141,99 +120,32 @@
                     android:id="@+id/img_nh_bank"
                     android:layout_width="0dp"
                     android:layout_height="30dp"
-                    android:layout_gravity="left"
+                    android:layout_gravity="center_vertical"
                     android:foregroundGravity="bottom"
                     android:background="@color/white"
-                    android:src="@drawable/ic_nh_bank"
+                    android:src="@drawable/ic_lifeplanet"
                     android:scaleType="fitCenter"
                     tools:ignore="MissingConstraints"
                     android:layout_weight="1">
                 </ImageButton>
 
                 <TextView
-                    android:id="@+id/text_nhbank"
+                    android:id="@+id/text_stock2"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="50dp"
                     android:paddingStart="10dp"
-                    android:text="NH 농협은행"
+                    android:text="보험 연동중..."
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"
-                    android:layout_weight="4">
+                    android:layout_weight="9">
                 </TextView>
-
-                <TextView
-                    android:id="@+id/text_NHbalance"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:text="0"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:gravity="end|center_vertical"
-                    android:layout_weight="4.5"/>
-                <TextView
-                    android:id="@+id/text_won"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:text="원"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:gravity="end|center_vertical"
-                    android:layout_weight="0.5"/>
             </LinearLayout>
-
-            <!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/rectangle_background"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_marginTop="20dp"
-                android:weightSum="10">
-
-                <ImageButton
-                    android:id="@+id/img_nh_finance"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="left"
-                    android:foregroundGravity="bottom"
-                    android:background="@color/white"
-                    android:src="@drawable/ic_nh_finance"
-                    android:scaleType="fitCenter"
-                    tools:ignore="MissingConstraints"
-                    android:layout_weight="1.5">
-                </ImageButton>
-
-                <TextView
-                    android:id="@+id/nh_finance"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:paddingStart="10dp"
-                    android:text="NH 농협상호금융"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:layout_weight="4.5">
-                </TextView>
-
-                <TextView
-                    android:id="@+id/text_nh_finance"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:text="4,000,000원"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:gravity="end"
-                    android:layout_weight="4"/>
-            </LinearLayout>-->
 
         </LinearLayout>
 
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

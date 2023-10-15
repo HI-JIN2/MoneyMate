@@ -115,7 +115,7 @@
                     android:layout_weight="1.5"/>
             </LinearLayout>
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -154,7 +154,7 @@
                     android:layout_height="match_parent"
                     android:button="@drawable/background_checkbox"
                     android:layout_weight="1.5"/>
-            </LinearLayout>
+            </LinearLayout>-->
 
             <!--<LinearLayout
                 android:layout_width="match_parent"
