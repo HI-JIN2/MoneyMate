@@ -1,6 +1,7 @@
 package com.ssu.moneymate.ui.main.fixed;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,15 +25,22 @@ public class FixedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentFixedBinding.inflate(inflater, container, false);
+        binding.btnFixAdd.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), FixActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        items.add(new FixedData("적금", 200000));
-        items.add(new FixedData("저축", 200000));
-        items.add(new FixedData("교통", 230000));
-        items.add(new FixedData("적금", 200000));
-        items.add(new FixedData("저축", 400000));
-        items.add(new FixedData("적금", 260000));
-        items.add(new FixedData("저축", 400000));
-        items.add(new FixedData("저축", 400000));
+        items.add(new FixedData("적금", "200000"));
+        items.add(new FixedData("저축", "200000"));
+        items.add(new FixedData("교통", "230000"));
+        items.add(new FixedData("적금", "200000"));
+        items.add(new FixedData("저축", "400000"));
+        items.add(new FixedData("적금", "260000"));
+        items.add(new FixedData("저축", "400000"));
+        items.add(new FixedData("저축", "400000"));
 
         fixedAdapter = new FixedAdapter(context, items);
         binding.rvFixedList.setAdapter(fixedAdapter);

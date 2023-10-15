@@ -62,7 +62,7 @@ public class FixedAdapter extends RecyclerView.Adapter<FixedAdapter.ViewHolder> 
             itemBinding.tvEveryMonth.setText("매 월");
             itemBinding.tvWon.setText("원");
             itemBinding.tvCategory.setText(item.category);
-            itemBinding.tvPrice.setText(String.valueOf(item.money));
+            itemBinding.tvPrice.setText(item.money);
         }
     }
 }
