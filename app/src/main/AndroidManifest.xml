@@ -34,6 +34,9 @@
             android:name=".ui.main.property.PropertyAgreeActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.main.fixed.FixActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.main.property.ConnectPropertyActivity"
             android:exported="true">
             <intent-filter>

@@ -13,14 +13,17 @@ import com.ssu.moneymate.R;
 import com.ssu.moneymate.databinding.ItemFixBinding;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FixedAdapter extends RecyclerView.Adapter<FixedAdapter.ViewHolder> {
     Context context;
-    private ArrayList<FixedData> arrayList;
+    private List<FixedData> arrayList;
+    private RoomDB database;
 
-    public FixedAdapter(Context context, ArrayList<FixedData> arrayList) {
+    public FixedAdapter(Context context, List<FixedData> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -33,10 +36,16 @@ public class FixedAdapter extends RecyclerView.Adapter<FixedAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull FixedAdapter.ViewHolder holder, int position) {
-        holder.bindItem(arrayList.get(position));
+        final FixedData data = arrayList.get(position);
+        database = RoomDB.getInstance(context);
+
+        holder.itemBinding.tvCategory.setText(data.getCategory());
+        holder.itemBinding.tvPrice.setText(data.getMoney());
+
+//        holder.bindItem(arrayList.get(position));
     }
 
-    public void setFixedList(ArrayList<FixedData> list){
+    public void setFixedList(List<FixedData> list){
         this.arrayList = list;
         notifyDataSetChanged();
     }
@@ -57,12 +66,5 @@ public class FixedAdapter extends RecyclerView.Adapter<FixedAdapter.ViewHolder> 
             itemBinding = ItemFixBinding.bind(itemView);
         }
 
-        void bindItem(FixedData item){
-            //뷰 바인딩으로 이미 자식뷰들의 참조값들이 모두 연결되어 있음.
-            itemBinding.tvEveryMonth.setText("매 월");
-            itemBinding.tvWon.setText("원");
-            itemBinding.tvCategory.setText(item.category);
-            itemBinding.tvPrice.setText(String.valueOf(item.money));
-        }
     }
 }
