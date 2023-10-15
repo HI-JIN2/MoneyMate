@@ -1,6 +1,7 @@
 package com.ssu.moneymate.ui.main.fixed;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,27 +13,39 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.ssu.moneymate.databinding.FragmentFixedBinding;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FixedFragment extends Fragment {
     Context context;
     FragmentFixedBinding binding;
 
-    ArrayList<FixedData> items = new ArrayList<>(); //리사이클러 뷰가 보여줄 대량의 데이터를 가지고 있는 리시트객체
+    List<FixedData> items = new ArrayList<>(); //리사이클러 뷰가 보여줄 대량의 데이터를 가지고 있는 리시트객체
     FixedAdapter fixedAdapter;
+    RoomDB database;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        context = getContext();
         binding = FragmentFixedBinding.inflate(inflater, container, false);
+        database = RoomDB.getInstance(context);
+//        database.fixedDao().deleteAll();
+        items = database.fixedDao().getAll();
+        long  total = 0;
+        for (int i = 0; i < items.size(); i++) {
 
-        items.add(new FixedData("적금", 200000));
-        items.add(new FixedData("저축", 200000));
-        items.add(new FixedData("교통", 230000));
-        items.add(new FixedData("적금", 200000));
-        items.add(new FixedData("저축", 400000));
-        items.add(new FixedData("적금", 260000));
-        items.add(new FixedData("저축", 400000));
-        items.add(new FixedData("저축", 400000));
+            total += Integer.parseInt(items.get(i).money);
+        }
+
+        binding.totalMoneyText.setText(String.valueOf(total));
+
+        binding.btnFixAdd.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), FixActivity.class);
+                startActivity(intent);
+            }
+        });
 
         fixedAdapter = new FixedAdapter(context, items);
         binding.rvFixedList.setAdapter(fixedAdapter);
@@ -41,4 +54,20 @@ public class FixedFragment extends Fragment {
         // Inflate the layout for this fragment
         return binding.getRoot();
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // 화면이 다시 보일 때 RecyclerView를 업데이트
+        items.clear();
+        items.addAll(database.fixedDao().getAll());
+        long  total = 0;
+        for (int i = 0; i < items.size(); i++) {
+            total += Integer.parseInt(items.get(i).money);
+        }
+        binding.totalMoneyText.setText(String.valueOf(total));
+        fixedAdapter.notifyDataSetChanged();
+    }
+
 }
