@@ -74,9 +74,9 @@ public class SolutionFragment extends Fragment {
         binding.btnRecreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String newResult =makeSolution(view);
-                Log.d("solution-new",newResult);
-                binding.tvSolution.setText(newResult);
+                makeSolution(view);
+//                Log.d("solution-new",newResult);
+//                binding.tvSolution.setText(newResult);
 //                openFragment(view);
             }
         });
