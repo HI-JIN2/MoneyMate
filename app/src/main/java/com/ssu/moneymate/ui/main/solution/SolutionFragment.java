@@ -75,9 +75,6 @@ public class SolutionFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 makeSolution(view);
-//                Log.d("solution-new",newResult);
-//                binding.tvSolution.setText(newResult);
-//                openFragment(view);
             }
         });
         // Inflate the layout for this fragment
@@ -130,7 +127,7 @@ public class SolutionFragment extends Fragment {
                 "부채 : 0원," +
                 "고정지출 : "+total+"원, "+
                 "세운 목표들 : "+combinedText+
-                " → 자산 관리를 위한 계획을 세워줘";
+                " → 자산 관리를 위한 계획을 세워줘, 좀더 자세하게 ";
 
 //        String requestText = "나는 현재 60만원을 가지고 있고 매달 5만원의 고정지출이 있어. 2달 뒤에 일본으로 여행을 가고 싶어. 자산 관리를 위한 계획을 세워줘";
         String result = "";
@@ -199,6 +196,7 @@ public class SolutionFragment extends Fragment {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("result", newResult);
                         editor.apply();
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

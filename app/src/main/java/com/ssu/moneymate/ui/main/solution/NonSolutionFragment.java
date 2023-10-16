@@ -106,6 +106,7 @@ public class NonSolutionFragment extends Fragment {
         LocalDate now = LocalDate.now();
 
 
+
         String requestText = "오늘은 "+now+"이다. "+
                 "현재 자산 : "+balance+nhbalance+"원, "+
                 "부채 : 0원," +
