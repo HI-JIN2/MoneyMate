@@ -1,6 +1,11 @@
 plugins {
     id 'com.android.application'
 }
+//
+//def localProperties = new Properties()
+//localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 android {
     namespace 'com.ssu.moneymate'
@@ -13,14 +18,23 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField "String", "gpt_url", properties['gpt_url']
+        buildConfigField "String", "gpt", properties['gpt']
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     buildTypes {
+        debug {
+            buildConfigField "Boolean", "DEBUG_MODE", "true"
+        }
         release {
+            buildConfigField "Boolean", "DEBUG_MODE", "false"
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -60,7 +74,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     // OkHttp
-    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.11'
 
     // Gson
     implementation 'com.google.code.gson:gson:2.10.1'
@@ -69,4 +83,6 @@ dependencies {
     implementation "androidx.room:room-runtime:2.5.2"
     annotationProcessor "androidx.room:room-compiler:2.5.2"
 
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata:2.3.1"
 }

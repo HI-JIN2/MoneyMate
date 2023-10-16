@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.ssu.moneymate.databinding.FragmentGoalBinding;
@@ -42,7 +43,7 @@ public class GoalFragment extends Fragment {
         binding.ivGoalDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImageView imageViewToDelete = binding.ivGoalBackground;
+                CardView imageViewToDelete = binding.ivGoalBackground;
                 TextView textViewToDelete = binding.tvGoalSettingContent;
                 ImageView deleteImageViewToDelete = binding.ivGoalDelete;
                 ImageView modifyImageViewToDelete = binding.ivGoalModify;
