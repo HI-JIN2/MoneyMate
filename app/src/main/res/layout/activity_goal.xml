@@ -349,7 +349,7 @@
 
     </LinearLayout>
 
-    요<TextView
+    <TextView
         android:id="@+id/btn_goal_setting_complete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
