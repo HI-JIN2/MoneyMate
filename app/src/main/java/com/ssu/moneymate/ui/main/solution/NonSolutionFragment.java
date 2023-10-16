@@ -28,6 +28,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -94,11 +95,19 @@ public class NonSolutionFragment extends Fragment {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String combinedText = sharedPreferences.getString("combinedText", "");
+        int balance = sharedPreferences.getInt("balance", 0);
+        int nhbalance = sharedPreferences.getInt("nhbalance", 0);
+
 
         Log.d("solution", String.valueOf(total));
         Log.d("solution",combinedText);
+        Log.d("solution", String.valueOf(balance+nhbalance));
+        // 현재 날짜 구하기
+        LocalDate now = LocalDate.now();
 
-        String requestText = "현재 자산 : 100만원," +
+
+        String requestText = "오늘은 "+now+"이다."+
+                "현재 자산 : "+balance+nhbalance +
                 "부채 : 0원," +
                 "고정지출 : "+total +
                 "세운 목표들 : "+combinedText+
