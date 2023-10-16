@@ -79,6 +79,7 @@
         </LinearLayout>
 
 
+
         <LinearLayout
             android:id="@+id/layout_kbbank"
             android:layout_width="match_parent"
@@ -149,7 +150,6 @@
                 android:layout_weight="8.5">
             </TextView>
         </LinearLayout>
-
 
         <!--<LinearLayout
             android:layout_width="match_parent"
