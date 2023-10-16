@@ -99,6 +99,12 @@ public class PropertyFragment extends Fragment {
             String formattedValue = numberFormat.format(balance+nhbalance);
             binding.textMainProperty.setText(formattedValue);
 
+            String kbformattedValue = numberFormat.format(balance);
+            binding.textKBbalance.setText(kbformattedValue);
+
+            String nhformattedValue = numberFormat.format(nhbalance);
+            binding.textNHbalance.setText(nhformattedValue);
+
             binding.layoutKbbank.setVisibility(View.VISIBLE);
             binding.layoutNhbank.setVisibility(View.VISIBLE);
         }
@@ -106,16 +112,26 @@ public class PropertyFragment extends Fragment {
             NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
             String formattedValue = numberFormat.format(balance);
             binding.textMainProperty.setText(formattedValue);
+
+            String kbformattedValue = numberFormat.format(balance);
+            binding.textKBbalance.setText(kbformattedValue);
+
             binding.layoutKbbank.setVisibility(View.VISIBLE);
         }
         else if (nhChecked) {
             NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
             String formattedValue = numberFormat.format(nhbalance);
             binding.textMainProperty.setText(formattedValue);
+
+            String nhformattedValue = numberFormat.format(nhbalance);
+            binding.textNHbalance.setText(nhformattedValue);
+
             binding.layoutNhbank.setVisibility(View.VISIBLE);
         }
         else if (!kbChecked && !nhChecked){
             binding.textMainProperty.setText("0");
+            binding.textKBbalance.setText("0");
+            binding.textNHbalance.setText("0");
         }
     }
 

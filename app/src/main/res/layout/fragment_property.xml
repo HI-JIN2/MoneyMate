@@ -76,6 +76,8 @@
                 android:textSize="25dp"
                 android:layout_weight="9">
             </TextView>
+
+
         </LinearLayout>
 
 
@@ -99,7 +101,7 @@
                 android:src="@drawable/ic_kb_bank"
                 android:scaleType="fitCenter"
                 tools:ignore="MissingConstraints"
-                android:layout_weight="1.5">
+                android:layout_weight="1">
             </ImageButton>
 
             <TextView
@@ -112,8 +114,30 @@
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                android:layout_weight="8.5">
+                android:layout_weight="4">
             </TextView>
+
+            <TextView
+                android:id="@+id/text_KBbalance"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:gravity="end|center_vertical"
+                android:layout_weight="4.5"/>
+
+            <TextView
+                android:id="@+id/text_KBwon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="원"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:gravity="end|center_vertical"
+                android:layout_weight="0.5"/>
         </LinearLayout>
 
         <LinearLayout
@@ -134,7 +158,7 @@
                 android:src="@drawable/ic_nh_bank"
                 android:scaleType="fitCenter"
                 tools:ignore="MissingConstraints"
-                android:layout_weight="1.5">
+                android:layout_weight="1">
             </ImageButton>
 
             <TextView
@@ -147,8 +171,29 @@
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                android:layout_weight="8.5">
+                android:layout_weight="4">
             </TextView>
+
+            <TextView
+                android:id="@+id/text_NHbalance"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:gravity="end|center_vertical"
+                android:layout_weight="4.5"/>
+            <TextView
+                android:id="@+id/text_won"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="원"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:gravity="end|center_vertical"
+                android:layout_weight="0.5"/>
         </LinearLayout>
 
         <!--<LinearLayout
