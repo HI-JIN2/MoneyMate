@@ -11,7 +11,6 @@
 ![10](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/b6d5aa70-0240-44f3-9189-270fe2af4302)
 ![11](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/e0db527a-fdb6-4248-9de1-197f23978263)
 ![12](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/d2ff0a36-efda-449c-a839-4f70139ba061)
-![13](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/7f90f7f3-458e-4e9b-b188-f461d3cd54ad)
 ![14](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/2945d959-8828-44e2-990a-b244f2027bb7)
 ![15](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/4fa08375-5939-4ad9-94e6-8c03d99be427)
 ![16](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/76b995a2-0563-44d5-b174-858b4b8254f0)
