@@ -3,7 +3,9 @@ package com.ssu.moneymate.ui.main.property;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -38,6 +40,8 @@ public class MyPropertyActivity extends AppCompatActivity {
 
     private ActivityMyPropertyBinding binding;
     private PropertyViewModel viewModel;
+    // SharedPreferences 파일 이름 정의
+    private static final String SHARED_PREFERENCES_NAME = "MyPropertySharedPreferences";
 
     PropertyDatabase database;
 
@@ -50,6 +54,14 @@ public class MyPropertyActivity extends AppCompatActivity {
         Intent intent = getIntent();
         boolean kbChecked = intent.getBooleanExtra("kbChecked", false);
         boolean nhChecked = intent.getBooleanExtra("nhChecked", false);
+
+        // SharedPreferences 초기화
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        // 값 저장
+        editor.putBoolean("kbChecked", kbChecked);
+        editor.putBoolean("nhChecked", nhChecked);
 
         viewModel = new ViewModelProvider(this).get(PropertyViewModel.class);
         database = PropertyDatabase.getInstance(this);
@@ -117,6 +129,10 @@ public class MyPropertyActivity extends AppCompatActivity {
                         // 잔액을 정수로 변환
                         int balance = Integer.parseInt(balanceStr);
                         int nhbalance = Integer.parseInt(NHbalance);
+
+                        editor.putInt("balance", balance);
+                        editor.putInt("nhbalance", nhbalance);
+                        editor.apply();
 
                         // UI를 업데이트하기 위해 runOnUiThread를 사용
                         runOnUiThread(new Runnable() {

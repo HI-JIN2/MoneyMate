@@ -1,6 +1,8 @@
 package com.ssu.moneymate.ui.main.property;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -45,9 +47,6 @@ public class PropertyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentPropertyBinding.inflate(inflater, container, false);
 
-        /*binding.layoutKbbank.setVisibility(View.GONE);
-        binding.layoutNhbank.setVisibility(View.GONE);*/
-
         viewModel = new ViewModelProvider(requireActivity()).get(PropertyViewModel.class);
         database = PropertyDatabase.getInstance(getContext());
         items = database.propertyDataDao().getAll();
@@ -67,64 +66,70 @@ public class PropertyFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        /*viewModel.isKbChecked().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean kbCheckedValue) {
-                if (kbCheckedValue != null && kbCheckedValue) {
-                    binding.layoutKbbank.setVisibility(View.VISIBLE);
-                } else {
-                    binding.layoutKbbank.setVisibility(View.GONE);
-                }
-            }
-        });
+        // PropertyFragment에서 값을 가져오려면 다음과 같이 SharedPreferences에서 값을 읽을 수 있습니다.
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPropertySharedPreferences", Context.MODE_PRIVATE);
+        boolean kbChecked = sharedPreferences.getBoolean("kbChecked", false);
+        boolean nhChecked = sharedPreferences.getBoolean("nhChecked", false);
+        int balance = sharedPreferences.getInt("balance", 0);
+        int nhbalance = sharedPreferences.getInt("nhbalance", 0);
 
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US); // 미국 로케일을 사용하여 쉼표(,)로 구분
+        String formattedValue = numberFormat.format(balance+nhbalance);
+        binding.textMainProperty.setText(formattedValue);
 
-        viewModel.isNhChecked().observe(getViewLifecycleOwner(), aBoolean -> {
-            if (Boolean.TRUE.equals(aBoolean))
-                binding.layoutNhbank.setVisibility(View.VISIBLE);
-            else
-                binding.layoutNhbank.setVisibility(View.GONE);
-        });*/
+        binding.layoutKbbank.setVisibility(View.GONE);
+        binding.layoutNhbank.setVisibility(View.GONE);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        /*//옵저버 정의 - 데이터가 변하는 이벤트 발생시 처리할 핸들러(람다)
-        Observer<Boolean> kbObserver = kbCheckedValue -> binding.layoutKbbank.setVisibility(View.VISIBLE);
 
-        // LiveData를 관찰하고 UI 업데이트를 수행하는 Observer
-        viewModel.isKbChecked().observe(this, kbObserver);
+        // PropertyFragment에서 값을 가져오려면 다음과 같이 SharedPreferences에서 값을 읽을 수 있습니다.
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPropertySharedPreferences", Context.MODE_PRIVATE);
+        boolean kbChecked = sharedPreferences.getBoolean("kbChecked", false);
+        boolean nhChecked = sharedPreferences.getBoolean("nhChecked", false);
+        int balance = sharedPreferences.getInt("balance", 0);
+        int nhbalance = sharedPreferences.getInt("nhbalance", 0);
 
-        //viewModel.isKbChecked().getValue()
+        Log.d("kbproperty", String.valueOf(kbChecked));
 
-            @Override
-            public void onChanged(Boolean kbCheckedValue) {
-                Log.d("kbsetproperty", String.valueOf(kbCheckedValue));
+        if (kbChecked && nhChecked) {
+            NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US); // 미국 로케일을 사용하여 쉼표(,)로 구분
+            String formattedValue = numberFormat.format(balance+nhbalance);
+            binding.textMainProperty.setText(formattedValue);
 
-                if (kbCheckedValue != null && kbCheckedValue) {
-                    binding.layoutKbbank.setVisibility(View.VISIBLE);
-                } else {
-                    binding.layoutKbbank.setVisibility(View.GONE);
-                }
-            }
+            binding.layoutKbbank.setVisibility(View.VISIBLE);
+            binding.layoutNhbank.setVisibility(View.VISIBLE);
+        }
+        else if (kbChecked) {
+            NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
+            String formattedValue = numberFormat.format(balance);
+            binding.textMainProperty.setText(formattedValue);
+            binding.layoutKbbank.setVisibility(View.VISIBLE);
+        }
+        else if (nhChecked) {
+            NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
+            String formattedValue = numberFormat.format(nhbalance);
+            binding.textMainProperty.setText(formattedValue);
+            binding.layoutNhbank.setVisibility(View.VISIBLE);
+        }
+        else if (!kbChecked && !nhChecked){
+            binding.textMainProperty.setText("0");
+        }
+    }
 
-        viewModel.isNhChecked().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean nhCheckedValue) {
-                if (nhCheckedValue != null && nhCheckedValue) {
-                    binding.layoutNhbank.setVisibility(View.VISIBLE);
-                } else {
-                    binding.layoutNhbank.setVisibility(View.GONE);
-                }
-            }
-        });*/
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
 
-        /*binding.layoutKbbank.setVisibility(View.VISIBLE);
-        binding.layoutNhbank.setVisibility(View.VISIBLE);
+        // SharedPreferences에서 값 제거
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPropertySharedPreferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US); // 미국 로케일을 사용하여 쉼표(,)로 구분
-        String formattedValue = numberFormat.format(3863175+4500000);
-        binding.textMainProperty.setText(formattedValue);*/
+        // 모든 값을 제거하려면 clear()를 사용할 수 있습니다.
+        editor.clear();
+
+        editor.apply(); // 변경 사항을 저장
     }
 }
