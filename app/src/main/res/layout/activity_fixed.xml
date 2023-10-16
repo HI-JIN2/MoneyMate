@@ -350,7 +350,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="31dp"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/shape_gray500_fill_20_rect"
+        android:background="@drawable/shape_gray50_200_fill_20_rect"
         android:clickable="false"
         android:gravity="center"
         android:paddingVertical="14dp"

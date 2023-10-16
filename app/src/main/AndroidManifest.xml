@@ -38,18 +38,11 @@
             android:exported="false" />
         <activity
             android:name=".ui.main.property.ConnectPropertyActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+            android:exported="true"/>
         <activity
             android:name=".ui.main.goal.GoalActivity"
             android:exported="true"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
