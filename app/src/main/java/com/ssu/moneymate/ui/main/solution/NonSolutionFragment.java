@@ -1,5 +1,6 @@
 package com.ssu.moneymate.ui.main.solution;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -42,8 +43,8 @@ public class NonSolutionFragment extends Fragment {
 
     List<FixedData> items = new ArrayList<>(); //리사이클러 뷰가 보여줄 대량의 데이터를 가지고 있는 리시트객체
     RoomDB database;
-
     Context context;
+    private ProgressDialog progressDialog;
 
     public NonSolutionFragment() {
         // Required empty public constructor
@@ -62,28 +63,13 @@ public class NonSolutionFragment extends Fragment {
         binding = FragmentNonSolutionBinding.inflate(inflater, container, false);
         context = getContext();
         database = RoomDB.getInstance(context);
-//        items = database.fixedDao().getAll();
+        Log.d("view","non-solution-onCreateView");
 
-        // 뷰 모델 초기화
-//        viewModel = new ViewModelProvider(this).get(UserViewModel.class);
-
-//        // 데이터 추가 예시
-//        viewModel.addItem("아이템 1");
-//        viewModel.addItem("아이템 2");
-//
-//        // 데이터 가져오기
-//        List<String> itemList = viewModel.getItemList();
-//        for (String item : itemList) {
-//            // 데이터 처리
-//        }
-
-
-
-        binding.btnRecreate.setOnClickListener(new View.OnClickListener() {
+        binding.btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openFragment(view);
-                makeSolution();
+                makeSolution(view);
+//                openFragment(view);
             }
         });
         return binding.getRoot();
@@ -99,9 +85,9 @@ public class NonSolutionFragment extends Fragment {
     }
 
 
-    public String makeSolution(){
+    public String makeSolution(View myView) {
         items.addAll(database.fixedDao().getAll());
-        long  total = 0;
+        long total = 0;
         for (int i = 0; i < items.size(); i++) {
             total += Integer.parseInt(items.get(i).getMoney());
         }
@@ -109,32 +95,39 @@ public class NonSolutionFragment extends Fragment {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String combinedText = sharedPreferences.getString("combinedText", "");
 
-        Log.d("solution",combinedText);
         Log.d("solution", String.valueOf(total));
+        Log.d("solution",combinedText);
 
-        String requestText = "안녕, 나의 자산 방법에 대해서 조언을 해줘." +
-                "나는 매달 "+total+"원의 고정지출이 있어."+
-                "나는 "+combinedText+"라는 목표를 가지고 있어"+
-                "자산 관리 팁을 알려줄래?";
+        String requestText = "현재 자산 : 100만원," +
+                "부채 : 0원," +
+                "고정지출 : "+total +
+                "세운 목표들 : "+combinedText+
+                "→ 자산 관리를 위한 계획을 세워줘";
 
+//        String requestText = "나는 현재 60만원을 가지고 있고 매달 5만원의 고정지출이 있어. 2달 뒤에 일본으로 여행을 가고 싶어. 자산 관리를 위한 계획을 세워줘";
         String result = "";
+
+        // ProgressDialog 생성 및 설정
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("로딩 중..."); // 로딩 중 메시지 설정
+        progressDialog.setCancelable(false); // 사용자가 취소할 수 없도록 설정
+        progressDialog.show(); // ProgressDialog 표시
 
         // 네트워크 요청을 백그라운드 스레드에서 실행
         new Thread(new Runnable() {
             @Override
             public void run() {
                 // API 엔드포인트 URL
-                String apiUrl = BuildConfig.gpt_url;
-
+                String apiUrl = BuildConfig.gpt;
 
                 // JSON 요청 바디 (이 부분은 API에 따라 다를 수 있음)
-                String jsonRequestBody = "{\"content\":\"" + "hello" + "\"}";
+                String jsonRequestBody = "{\"prompt\":\"" + requestText+ "\"}";
 
                 // OkHttp 클라이언트 생성
                 OkHttpClient client = new OkHttpClient.Builder()
-                        .connectTimeout(30, TimeUnit.SECONDS) // 연결 시간 초과 설정
-                        .readTimeout(30, TimeUnit.SECONDS)    // 읽기 시간 초과 설정
-                        .writeTimeout(30, TimeUnit.SECONDS)   // 쓰기 시간 초과 설정
+                        .connectTimeout(120, TimeUnit.SECONDS) // 연결 시간 초과 설정
+                        .readTimeout(120, TimeUnit.SECONDS)    // 읽기 시간 초과 설정
+                        .writeTimeout(120, TimeUnit.SECONDS)   // 쓰기 시간 초과 설정
                         .build();
 
                 // JSON 요청 바디의 MediaType 설정
@@ -149,37 +142,30 @@ public class NonSolutionFragment extends Fragment {
                 try {
                     // API 요청 실행
                     Response response = client.newCall(request).execute();
+                    Log.d("GPT-re",request.toString());
 
+                    Log.d("GPT-json",jsonRequestBody);
                     // API 응답 문자열 가져오기
                     String apiResponse = response.body().string();
-                    Log.d("solution",apiResponse);
+                    Log.d("GPT", apiResponse);
 
                     try {
                         JSONObject jsonObject = new JSONObject(apiResponse); // JSON 문자열을 JSONObject로 파싱
                         String result = jsonObject.getString("result"); // "result" 키의 값을 가져옴
 
-//                        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("result", result);
                         editor.apply();
 
-
-                        // UI를 업데이트하기 위해 runOnUiThread를 사용
-//                        runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                Log.d("stockdata", firstKcisGoodNm);
-//                                Log.d("stockdata", secondKcisGoodNm);
-//
-//                                binding.textStock1.setText(firstKcisGoodNm);
-//                                binding.textStock2.setText(secondKcisGoodNm);
-//                            }
-//                        });
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
+                } finally {
+                    // ProgressDialog 닫기
+                    progressDialog.dismiss();
+                    openFragment(myView);
                 }
             }
         }).start(); // 백그라운드 스레드 실행

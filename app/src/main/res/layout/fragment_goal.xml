@@ -36,7 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
+    <androidx.cardview.widget.CardView
         android:id="@+id/iv_goal_background"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -46,43 +46,52 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tv_goal_setting_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="63dp"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@id/iv_goal_background"
-        app:layout_constraintTop_toTopOf="@id/iv_goal_background"
-        tools:text="나는 내년에 있을 유학을 위해\n200만원을 모을 거야" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
+            <ImageView
+                android:id="@+id/iv_goal_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="-16dp"
+                android:contentDescription="리사이클러뷰"
+                android:padding="12dp"
+                android:src="@drawable/ic_goal_delete"
+                app:layout_constraintEnd_toStartOf="@id/iv_goal_modify"
+                app:layout_constraintTop_toTopOf="@id/iv_goal_background" />
 
-    <ImageView
-        android:id="@+id/iv_goal_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="-16dp"
-        android:contentDescription="리사이클러뷰"
-        android:padding="12dp"
-        android:src="@drawable/ic_goal_delete"
-        app:layout_constraintEnd_toStartOf="@id/iv_goal_modify"
-        app:layout_constraintTop_toTopOf="@id/iv_goal_background" />
+            <ImageView
+                android:id="@+id/iv_goal_modify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:contentDescription="리사이클러뷰"
+                android:padding="12dp"
+                android:src="@drawable/ic_goal_modify"
+                app:layout_constraintEnd_toEndOf="@id/iv_goal_background"
+                app:layout_constraintTop_toTopOf="@id/iv_goal_background" />
 
-    <ImageView
-        android:id="@+id/iv_goal_modify"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="6dp"
-        android:contentDescription="리사이클러뷰"
-        android:padding="12dp"
-        android:src="@drawable/ic_goal_modify"
-        app:layout_constraintEnd_toEndOf="@id/iv_goal_background"
-        app:layout_constraintTop_toTopOf="@id/iv_goal_background" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_goal_setting_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="63dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@id/iv_goal_background"
+            app:layout_constraintTop_toTopOf="@id/iv_goal_background"
+            tools:text="나는 내년에 있을 유학을 위해\n200만원을 모을 거야" />
+
+
+    </androidx.cardview.widget.CardView>
 
     <!--    <androidx.recyclerview.widget.RecyclerView-->
     <!--        android:id="@+id/rv_goal"-->

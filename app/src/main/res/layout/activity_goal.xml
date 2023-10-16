@@ -107,7 +107,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:text="을(를) 모을 거야"
+        android:text="원을 모을 거야"
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintStart_toEndOf="@id/et_goal_setting_money"

@@ -19,6 +19,8 @@ android {
         versionName "1.0"
 
         buildConfigField "String", "gpt_url", properties['gpt_url']
+        buildConfigField "String", "gpt", properties['gpt']
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures {
