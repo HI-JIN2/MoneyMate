@@ -106,12 +106,13 @@ public class NonSolutionFragment extends Fragment {
         LocalDate now = LocalDate.now();
 
 
-        String requestText = "오늘은 "+now+"이다."+
-                "현재 자산 : "+balance+nhbalance +
+
+        String requestText = "오늘은 "+now+"이다. "+
+                "현재 자산 : "+balance+nhbalance+"원, "+
                 "부채 : 0원," +
-                "고정지출 : "+total +
+                "고정지출 : "+total+"원, "+
                 "세운 목표들 : "+combinedText+
-                "→ 자산 관리를 위한 계획을 세워줘";
+                " → 자산 관리를 위한 계획을 세워줘";
 
 //        String requestText = "나는 현재 60만원을 가지고 있고 매달 5만원의 고정지출이 있어. 2달 뒤에 일본으로 여행을 가고 싶어. 자산 관리를 위한 계획을 세워줘";
         String result = "";
@@ -162,6 +163,11 @@ public class NonSolutionFragment extends Fragment {
                         JSONObject jsonObject = new JSONObject(apiResponse); // JSON 문자열을 JSONObject로 파싱
                         String result = jsonObject.getString("result"); // "result" 키의 값을 가져옴
 
+                        String prefixToRemove = "야 합니다";
+                        if (result.startsWith(prefixToRemove)) {
+                            // Remove the prefix from the newResult
+                            result = result.substring(prefixToRemove.length());
+                        }
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("result", result);
                         editor.apply();
