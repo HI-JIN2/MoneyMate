@@ -1,4 +1,6 @@
 # MoneyMate
+- 머니메이트: ChatGPT와 함께하는 슬기로운 금융 목표 설정
+- AI활용 온라인 개발대회 싱커톤 시즌3 최우수상 (800여팀 중 2등)
 ![1](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/e849aeb8-60fd-4bc1-8213-5f1c4686ca17)
 ![2](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/328caef0-8ae8-41c9-9acf-cae6cd97c33a)
 ![3](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/1a42699b-acda-489b-a5a3-519662a5b2a6)
