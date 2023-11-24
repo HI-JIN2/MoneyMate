@@ -1,6 +1,8 @@
 # MoneyMate
 - 머니메이트: ChatGPT와 함께하는 슬기로운 금융 목표 설정
-- AI활용 온라인 개발대회 싱커톤 시즌3 최우수상 (800여팀 중 2등)
+- [AI활용 온라인 개발대회 싱커톤 시즌3](https://www.synctree101.com/syncathon/main)  [최우수상 (800여팀 중 2등)](https://blog.naver.com/synctree/223267230931)
+  - KB국민은행 · NH농협은행 · 교보라이프플래닛 배, AI활용 온라인 개발대회
+  - 다양한 AI(ChatGPT, DALL·E 등)을 활용하여 창의적인 금융&보험 서비스를 구현하는 대회로, 약 800여 개 팀의 참여 신청으로 역대 싱커톤 중 최대 규모를 기록했습니다.
 ![1](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/e849aeb8-60fd-4bc1-8213-5f1c4686ca17)
 ![2](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/328caef0-8ae8-41c9-9acf-cae6cd97c33a)
 ![3](https://github.com/MoneyMate-project/MoneyMate/assets/94737714/1a42699b-acda-489b-a5a3-519662a5b2a6)
